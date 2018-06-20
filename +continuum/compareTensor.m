@@ -85,8 +85,8 @@ function [] = compareTensor( A, B, dX, dY, Lx, Ly )
     
     t = linspace(0,2*pi,50);
     
-    XA = lambdaA2 * cos(t);
-    YA = lambdaA1 * sin(t);
+    XA = .75*lambdaA2 * cos(t);
+    YA = .75*lambdaA1 * sin(t);
     
     XB = lambdaB2 * cos(t);
     YB = lambdaB1 * sin(t);

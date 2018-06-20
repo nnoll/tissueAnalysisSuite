@@ -10,6 +10,9 @@ function [ q, theta, p, tri, iCells, bulkV, ERes ] = returnDual( Struct, extCell
     beq = [mean(p);mean(q0(:,3))];
     d0 = sparse(d0);
     
+%     size(bCells)
+%     size(p)
+%     size(q0)
     optimset = optimoptions('fmincon','Display','none','MaxFunEvals',1e6,'MaxIter',2e3,'TolFun',1e-6,...
                'Algorithm','interior-point','GradObj','on','GradConstr','on','DerivativeCheck','off',...
                'Hessian','on','HessFcn',@(x,lambda) hessian(x,lambda,bCells,d0,rBX,rBY,mask));
