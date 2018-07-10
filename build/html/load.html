@@ -1,0 +1,578 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>load &mdash; tissueAnalysisSuite v1.0 documentation</title>
+  
+
+  
+  
+  
+  
+
+  
+
+  
+  
+    
+
+  
+
+  <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="generate" href="generated.html" />
+    <link rel="prev" title="continuum" href="continuum.html" /> 
+
+  
+  <script src="_static/js/modernizr.min.js"></script>
+
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search">
+          
+
+          
+            <a href="index.html" class="icon icon-home"> tissueAnalysisSuite
+          
+
+          
+          </a>
+
+          
+            
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <p class="caption"><span class="caption-text">Namespaces:</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="track.html">track</a></li>
+<li class="toctree-l1"><a class="reference internal" href="fitDual.html">fitDual</a></li>
+<li class="toctree-l1"><a class="reference internal" href="continuum.html">continuum</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">load</a></li>
+<li class="toctree-l1"><a class="reference internal" href="generated.html">generate</a></li>
+<li class="toctree-l1"><a class="reference internal" href="interpolate.html">interpolate</a></li>
+<li class="toctree-l1"><a class="reference internal" href="isogonal.html">isogonal</a></li>
+<li class="toctree-l1"><a class="reference internal" href="measure.html">measure</a></li>
+<li class="toctree-l1"><a class="reference internal" href="seg.html">seg</a></li>
+<li class="toctree-l1"><a class="reference internal" href="smooth.html">smooth</a></li>
+<li class="toctree-l1"><a class="reference internal" href="pressure.html">pressure</a></li>
+<li class="toctree-l1"><a class="reference internal" href="save.html">save</a></li>
+<li class="toctree-l1"><a class="reference internal" href="MI.html">MI</a></li>
+<li class="toctree-l1"><a class="reference internal" href="embedSpace.html">embedSpace</a></li>
+<li class="toctree-l1"><a class="reference internal" href="plot.html">plot</a></li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="index.html">tissueAnalysisSuite</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="index.html">Docs</a> &raquo;</li>
+        
+      <li>load</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+            <a href="_sources/load.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="module-+load">
+<span id="load"></span><h1>load<a class="headerlink" href="#module-+load" title="Permalink to this headline">¶</a></h1>
+<dl class="function">
+<dt id="+load.ilastikh5">
+<code class="descclassname">+load.</code><code class="descname">ilastikh5</code><span class="sig-paren">(</span><em>Folder</em>, <em>mode</em><span class="sig-paren">)</span><a class="headerlink" href="#+load.ilastikh5" title="Permalink to this definition">¶</a></dt>
+<dd><p>READ_ILASTIKH5</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="+load.loadTiff">
+<code class="descclassname">+load.</code><code class="descname">loadTiff</code><span class="sig-paren">(</span><em>path</em><span class="sig-paren">)</span><a class="headerlink" href="#+load.loadTiff" title="Permalink to this definition">¶</a></dt>
+<dd><p>Copyright (c) 2012, YoonOh Tak
+All rights reserved.</p>
+<p>Redistribution and use in source and binary forms, with or without 
+modification, are permitted provided that the following conditions are 
+met:</p>
+<blockquote>
+<div><ul class="simple">
+<li>Redistributions of source code must retain the above copyright 
+notice, this list of conditions and the following disclaimer.</li>
+<li>Redistributions in binary form must reproduce the above copyright 
+notice, this list of conditions and the following disclaimer in 
+the documentation and/or other materials provided with the distribution</li>
+<li>Neither the name of the Gwangju Institute of Science and Technology (GIST), Republic of Korea nor the names 
+of its contributors may be used to endorse or promote products derived 
+from this software without specific prior written permission.</li>
+</ul>
+</div></blockquote>
+<p>THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS “AS IS” 
+AND ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE 
+IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE 
+ARE DISCLAIMED. IN NO EVENT SHALL THE COPYRIGHT OWNER OR CONTRIBUTORS BE 
+LIABLE FOR ANY DIRECT, INDIRECT, INCIDENTAL, SPECIAL, EXEMPLARY, OR 
+CONSEQUENTIAL DAMAGES (INCLUDING, BUT NOT LIMITED TO, PROCUREMENT OF 
+SUBSTITUTE GOODS OR SERVICES; LOSS OF USE, DATA, OR PROFITS; OR BUSINESS 
+INTERRUPTION) HOWEVER CAUSED AND ON ANY THEORY OF LIABILITY, WHETHER IN 
+CONTRACT, STRICT LIABILITY, OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE) 
+ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE 
+POSSIBILITY OF SUCH DAMAGE.</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="+load.mitoticCells">
+<code class="descclassname">+load.</code><code class="descname">mitoticCells</code><span class="sig-paren">(</span><em>Folder</em><span class="sig-paren">)</span><a class="headerlink" href="#+load.mitoticCells" title="Permalink to this definition">¶</a></dt>
+<dd><p>MITOTIC CELLS</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="+load.png">
+<code class="descclassname">+load.</code><code class="descname">png</code><span class="sig-paren">(</span><em>Folder</em><span class="sig-paren">)</span><a class="headerlink" href="#+load.png" title="Permalink to this definition">¶</a></dt>
+<dd><p>READTIFF Summary of this function goes here
+Detailed explanation goes here</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="+load.polydern">
+<code class="descclassname">+load.</code><code class="descname">polydern</code><span class="sig-paren">(</span><em>p</em>, <em>diffvar</em><span class="sig-paren">)</span><a class="headerlink" href="#+load.polydern" title="Permalink to this definition">¶</a></dt>
+<dd><p>polydern: partial derivatives of a n-dimensional polynomial model created by polyfitn.
+usage: pout = polydern(p,diffvar)</p>
+<dl class="docutils">
+<dt>arguments: (input)</dt>
+<dd><dl class="first last docutils">
+<dt>p - a structure containing a polynomial regression model.  See polyfitn</dt>
+<dd>for details.</dd>
+<dt>diffvar - integer, which variable to compute the derivative with respect</dt>
+<dd>to. If diffvar is a character string, then it refers to an explicit
+variable in the model that is found in the VarNames field. If so,
+the variable name must be an exact match for one of the variables
+listed in p.VarNames.</dd>
+</dl>
+</dd>
+</dl>
+<p>arguments: (output)
+pout - a structure containing a polynomial regression model which</p>
+<blockquote>
+<div>describes the partial derivative with respect to variable #i.</div></blockquote>
+<p>Note:
+Polydern modifies the “ModelTerms” and “Coefficients” fields in creating
+the output polynomial. ParameterVar, parameterStd are also updated to
+have the proper shape, as well as scaling them to reflect the derivative.</p>
+<p>The other fields (R2, RMSE, VarNames) are copied without change, even
+though the error measures are no longer meaningful for the derivative
+polynomial.</p>
+<p>This function uses polynomial structure variables created by polyfitn, 
+which is part of the PolyfitnTools package by John D’Errico:</p>
+<blockquote>
+<div><a class="reference external" href="http://www.mathworks.com/matlabcentral/fileexchange/10065">http://www.mathworks.com/matlabcentral/fileexchange/10065</a></div></blockquote>
+<p>See also: polyder, polyfitn, polyvaln</p>
+<p>Polydern author: Jason Goodman
+Error checks, ParameterStd/Var updates and allowance for the variable
+name itself instead of an index added by John D’Errico</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="+load.polyfitn">
+<code class="descclassname">+load.</code><code class="descname">polyfitn</code><span class="sig-paren">(</span><em>indepvar</em>, <em>depvar</em>, <em>modelterms</em><span class="sig-paren">)</span><a class="headerlink" href="#+load.polyfitn" title="Permalink to this definition">¶</a></dt>
+<dd><p>polyfitn: fits a general polynomial regression model in n dimensions
+usage: polymodel = polyfitn(indepvar,depvar,modelterms)</p>
+<p>Polyfitn fits a polynomial regression model of one or more
+independent variables, of the general form:</p>
+<blockquote>
+<div>z = f(x,y,…) + error</div></blockquote>
+<dl class="docutils">
+<dt>arguments: (input)</dt>
+<dd><dl class="first docutils">
+<dt>indepvar - (n x p) array of independent variables as columns</dt>
+<dd><p class="first">n is the number of data points
+p is the dimension of the independent variable space</p>
+<p class="last">IF n == 1, then I will assume there is only a
+single independent variable.</p>
+</dd>
+<dt>depvar   - (n x 1 or 1 x n) vector - dependent variable</dt>
+<dd><p class="first">length(depvar) must be n.</p>
+<p class="last">Only 1 dependent variable is allowed, since I also
+return statistics on the model.</p>
+</dd>
+</dl>
+<p>modelterms - defines the terms used in the model itself</p>
+<blockquote class="last">
+<div><dl class="docutils">
+<dt>IF modelterms is a scalar integer, then it designates</dt>
+<dd><p class="first">the overall order of the model. All possible terms
+up to that order will be employed. Thus, if order
+is 2 and p == 2 (i.e., there are two variables) then
+the terms selected will be:</p>
+<blockquote>
+<div>{constant, x, x^2, y, x*y, y^2}</div></blockquote>
+<p class="last">Beware the consequences of high order polynomial
+models.</p>
+</dd>
+<dt>IF modelterms is a (k x p) numeric array, then each</dt>
+<dd><p class="first">row of this array designates the exponents of one
+term in the model. Thus to designate a model with
+the above list of terms, we would define modelterms as</p>
+<p class="last">modelterms = [0 0;1 0;2 0;0 1;1 1;0 2]</p>
+</dd>
+<dt>If modelterms is a character string, then it will be</dt>
+<dd><p class="first">parsed as a list of terms in the regression model.
+The terms will be assume to be separated by a comma
+or by blanks. The variable names used must be legal
+matlab variable names. Exponents in the model may
+may be any real number, positive or negative.</p>
+<p>For example, ‘constant, x, y, x*y, x^2, x*y*y’
+will be parsed as a model specification as if you
+had supplied:
+modelterms = [0 0;1 0;0 1;1 1;2 0;1 2]</p>
+<p class="last">The word ‘constant’ is a keyword, and will denote a
+constant terms in the model. Variable names will be
+sorted in alphabetical order as defined by sort.
+This order will assign them to columns of the
+independent array. Note that ‘xy’ will be parsed as
+a single variable name, not as the product of x and y.</p>
+</dd>
+<dt>If modelterms is a cell array, then it will be taken</dt>
+<dd><p class="first">to be a list of character terms. Similarly,</p>
+<p>{‘constant’, ‘x’, ‘y’, ‘x*y’, ‘x^2’, ‘x*y^-1’}</p>
+<p>will be parsed as a model specification as if you
+had supplied:</p>
+<p class="last">modelterms = [0 0;1 0;0 1;1 1;2 0;1 -1]</p>
+</dd>
+</dl>
+</div></blockquote>
+</dd>
+<dt>Arguments: (output)</dt>
+<dd><dl class="first last docutils">
+<dt>polymodel - A structure containing the regression model</dt>
+<dd><p class="first">polymodel.ModelTerms = list of terms in the model
+polymodel.Coefficients = regression coefficients
+polymodel.ParameterVar = variances of model coefficients
+polymodel.ParameterStd = standard deviation of model coefficients
+polymodel.DoF = Degrees of freedom remaining
+polymodel.p = double sided t-probability, as a test against zero
+polymodel.R2 = R^2 for the regression model
+polymodel.AdjustedR2 = Adjusted R^2 for the regression model
+polymodel.RMSE = Root mean squared error
+polymodel.VarNames = Cell array of variable names</p>
+<blockquote>
+<div>as parsed from a char based model specification.</div></blockquote>
+<p>Note 1: Because the terms in a general polynomial
+model can be arbitrarily chosen by the user, I must
+package the erms and coefficients together into a
+structure. This also forces use of a special evaluation
+tool: polyvaln.</p>
+<p>Note 2: A polymodel can be evaluated for any set
+of values with the function polyvaln. However, if
+you wish to manipulate the result symbolically using
+my own sympoly tools, this structure can be converted
+to a sympoly using the function polyn2sympoly. There
+is also a polyn2sym tool, for those who prefer the
+symbolic TB.</p>
+<p>Note 3: When no constant term is included in the model,
+the traditional R^2 can be negative. This case is
+identified, and then a more appropriate computation
+for R^2 is then used.</p>
+<p>Note 4: Adjusted R^2 accounts for changing degrees of
+freedom in the model. It CAN be negative, and will always
+be less than the traditional R^2 values.</p>
+<p>Note 5: DoF is just the number of data points minus the number of
+terms to estimate.</p>
+<p class="last">Note 6: p is effectively a 2-sided t-test against the
+corresponding coefficient being zero. So p should be
+near zero.</p>
+</dd>
+</dl>
+</dd>
+</dl>
+<p>Example:
+mdl = polyfitn(rand(1000,1),rand(1000,1),4)
+mdl =</p>
+<blockquote>
+<div><blockquote>
+<div>ModelTerms: [5x1 double]</div></blockquote>
+<p>Coefficients: [0.95506 -2.2363 1.6668 -0.45408 0.55207]
+ParameterVar: [3.7645 15.461 6.9479 0.42831 0.0022732]
+ParameterStd: [1.9402 3.9321 2.6359 0.65446 0.047678]</p>
+<blockquote>
+<div><blockquote>
+<div><dl class="docutils">
+<dt>DoF: 995</dt>
+<dd><blockquote class="first">
+<div>p: [0.62266 0.56966 0.5273 0.48796 3.5389e-29]</div></blockquote>
+<p class="last">R2: 0.0021445</p>
+</dd>
+</dl>
+</div></blockquote>
+<dl class="docutils">
+<dt>AdjustedR2: -0.001867</dt>
+<dd><blockquote class="first">
+<div>RMSE: 0.2884</div></blockquote>
+<p class="last">VarNames: {‘X1’}</p>
+</dd>
+</dl>
+</div></blockquote>
+</div></blockquote>
+<p>Only the constant term should be significantly different from zero
+in this model. In fact, if we looked at a rough confidence interval
+on that coefficient, we would get</p>
+<blockquote>
+<div><p>mdl.Coefficients(5) + 2*[-1 1]*mdl.ParameterStd(5)
+ans =</p>
+<blockquote>
+<div>0.45672      0.64743</div></blockquote>
+</div></blockquote>
+<p>This interval should contain 0.5, as it does.</p>
+<p>Find my sympoly toolbox here:
+<a class="reference external" href="http://www.mathworks.com/matlabcentral/fileexchange/loadFile.do?objectId=9577&amp;objectType=FILE">http://www.mathworks.com/matlabcentral/fileexchange/loadFile.do?objectId=9577&amp;objectType=FILE</a></p>
+<p>See also: polyvaln, polyfit, polyval, polyn2sympoly, sympoly</p>
+<p>Author: John D’Errico
+Release: 2.0
+Release date: 2/19/06</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="+load.polyn2sym">
+<code class="descclassname">+load.</code><code class="descname">polyn2sym</code><span class="sig-paren">(</span><em>polyn</em><span class="sig-paren">)</span><a class="headerlink" href="#+load.polyn2sym" title="Permalink to this definition">¶</a></dt>
+<dd><p>polyn2sympoly: convert a regression polynomial from polyfitn into its symbolic toolbox form
+usage: sp = polyn2sym(polyn)</p>
+<dl class="docutils">
+<dt>arguments: (input)</dt>
+<dd>polyn - a structure as returned from polyfitn</dd>
+<dt>arguments: (output)</dt>
+<dd>s - A symbolic toolbox object</dd>
+</dl>
+<p>After conversion into a symbolic toolbox form, any symbolic operations are
+now possible on the polynomial.</p>
+<p>Requirement: The symbolic toolbox, as supplied by the MathWorks.
+<a class="reference external" href="http://www.mathworks.com/products/symbolic/functionlist.html">http://www.mathworks.com/products/symbolic/functionlist.html</a></p>
+<p>See also: polyvaln, polyfit, polyval, sym</p>
+<p>Author: John D’Errico
+Release: 3.0
+Release date: 8/23/06</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="+load.polyn2sympoly">
+<code class="descclassname">+load.</code><code class="descname">polyn2sympoly</code><span class="sig-paren">(</span><em>polyn</em><span class="sig-paren">)</span><a class="headerlink" href="#+load.polyn2sympoly" title="Permalink to this definition">¶</a></dt>
+<dd><p>polyn2sympoly: convert a regression polynomial from polyfitn into a sympoly
+usage: sp = polyn2sympoly(polyn)</p>
+<dl class="docutils">
+<dt>arguments: (input)</dt>
+<dd>polyn - a structure as returned from polyfitn</dd>
+<dt>arguments: (output)</dt>
+<dd>sp - A sympoly object</dd>
+</dl>
+<p>After conversion into a sympoly, any symbolic operations are
+now possible on this form.</p>
+<p>Requirement: The sympoly toolbox, as found on Matlab Central.
+<a class="reference external" href="http://www.mathworks.com/matlabcentral/fileexchange/loadFile.do?objectId=9577&amp;objectType=FILE">http://www.mathworks.com/matlabcentral/fileexchange/loadFile.do?objectId=9577&amp;objectType=FILE</a></p>
+<p>See also: polyvaln, polyfit, polyval, sympoly</p>
+<p>Author: John D’Errico
+Release: 1.0
+Release date: 2/19/06</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="+load.polyvaln">
+<code class="descclassname">+load.</code><code class="descname">polyvaln</code><span class="sig-paren">(</span><em>polymodel</em>, <em>indepvar</em><span class="sig-paren">)</span><a class="headerlink" href="#+load.polyvaln" title="Permalink to this definition">¶</a></dt>
+<dd><p>polyvaln: evaluates a polynomial model as a function of its variables
+usage: ypred = polyvaln(polymodel,indepvar)</p>
+<dl class="docutils">
+<dt>arguments: (input)</dt>
+<dd><dl class="first last docutils">
+<dt>indepvar - (n x p) array of independent variables as columns</dt>
+<dd><p class="first">n is the number of data points to evaluate
+p is the dimension of the independent variable space</p>
+<p class="last">IF n == 1, then I will assume there is only a
+single independent variable.</p>
+</dd>
+<dt>polymodel - A structure containing a regression model from polyfitn</dt>
+<dd><p class="first">polymodel.ModelTerms = list of terms in the model
+polymodel.Coefficients = regression coefficients</p>
+<p class="last">Note: A polymodel can be evaluated for any set of
+values with the function polyvaln. However, if you
+wish to manipulate the result symbolically using my
+own sympoly tools, this structure should be converted
+to a sympoly using the function polyn2sympoly.</p>
+</dd>
+</dl>
+</dd>
+<dt>Arguments: (output)</dt>
+<dd>ypred - nx1 vector of predictions through the model.</dd>
+</dl>
+<p>See also: polyfitn, polyfit, polyval, polyn2sympoly, sympoly</p>
+<p>Author: John D’Errico
+Release: 1.0
+Release date: 2/19/06</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="+load.tif">
+<code class="descclassname">+load.</code><code class="descname">tif</code><span class="sig-paren">(</span><em>Folder</em><span class="sig-paren">)</span><a class="headerlink" href="#+load.tif" title="Permalink to this definition">¶</a></dt>
+<dd><p>READTIFF Summary of this function goes here
+Detailed explanation goes here</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="+load.tif2h5">
+<code class="descclassname">+load.</code><code class="descname">tif2h5</code><span class="sig-paren">(</span><em>Folder</em>, <em>mode</em><span class="sig-paren">)</span><a class="headerlink" href="#+load.tif2h5" title="Permalink to this definition">¶</a></dt>
+<dd><p>READTIFF Summary of this function goes here
+Detailed explanation goes here</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="+load.uniformBG">
+<code class="descclassname">+load.</code><code class="descname">uniformBG</code><span class="sig-paren">(</span><em>img</em>, <em>delta</em><span class="sig-paren">)</span><a class="headerlink" href="#+load.uniformBG" title="Permalink to this definition">¶</a></dt>
+<dd><p>UNIFORM BG</p>
+</dd></dl>
+
+</div>
+
+
+           </div>
+           
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="generated.html" class="btn btn-neutral float-right" title="generate" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="continuum.html" class="btn btn-neutral" title="continuum" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2018, Nicholas Noll.
+
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/rtfd/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  
+
+    <script type="text/javascript">
+        var DOCUMENTATION_OPTIONS = {
+            URL_ROOT:'./',
+            VERSION:'v1.0',
+            LANGUAGE:'None',
+            COLLAPSE_INDEX:false,
+            FILE_SUFFIX:'.html',
+            HAS_SOURCE:  true,
+            SOURCELINK_SUFFIX: '.txt'
+        };
+    </script>
+      <script type="text/javascript" src="_static/jquery.js"></script>
+      <script type="text/javascript" src="_static/underscore.js"></script>
+      <script type="text/javascript" src="_static/doctools.js"></script>
+      <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+
+  
+
+  <script type="text/javascript" src="_static/js/theme.js"></script>
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

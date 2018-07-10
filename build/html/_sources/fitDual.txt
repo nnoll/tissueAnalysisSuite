@@ -1,0 +1,5 @@
+fitDual
+===============================================
+
+.. automodule:: +fitDual
+    :members:

@@ -1,0 +1,701 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>plot &mdash; tissueAnalysisSuite v1.0 documentation</title>
+  
+
+  
+  
+  
+  
+
+  
+
+  
+  
+    
+
+  
+
+  <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="prev" title="embedSpace" href="embedSpace.html" /> 
+
+  
+  <script src="_static/js/modernizr.min.js"></script>
+
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search">
+          
+
+          
+            <a href="index.html" class="icon icon-home"> tissueAnalysisSuite
+          
+
+          
+          </a>
+
+          
+            
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <p class="caption"><span class="caption-text">Namespaces:</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="track.html">track</a></li>
+<li class="toctree-l1"><a class="reference internal" href="fitDual.html">fitDual</a></li>
+<li class="toctree-l1"><a class="reference internal" href="continuum.html">continuum</a></li>
+<li class="toctree-l1"><a class="reference internal" href="load.html">load</a></li>
+<li class="toctree-l1"><a class="reference internal" href="generated.html">generate</a></li>
+<li class="toctree-l1"><a class="reference internal" href="interpolate.html">interpolate</a></li>
+<li class="toctree-l1"><a class="reference internal" href="isogonal.html">isogonal</a></li>
+<li class="toctree-l1"><a class="reference internal" href="measure.html">measure</a></li>
+<li class="toctree-l1"><a class="reference internal" href="seg.html">seg</a></li>
+<li class="toctree-l1"><a class="reference internal" href="smooth.html">smooth</a></li>
+<li class="toctree-l1"><a class="reference internal" href="pressure.html">pressure</a></li>
+<li class="toctree-l1"><a class="reference internal" href="save.html">save</a></li>
+<li class="toctree-l1"><a class="reference internal" href="MI.html">MI</a></li>
+<li class="toctree-l1"><a class="reference internal" href="embedSpace.html">embedSpace</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">plot</a></li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="index.html">tissueAnalysisSuite</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="index.html">Docs</a> &raquo;</li>
+        
+      <li>plot</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+            <a href="_sources/plot.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="module-+plot">
+<span id="plot"></span><h1>plot<a class="headerlink" href="#module-+plot" title="Permalink to this headline">¶</a></h1>
+<dl class="function">
+<dt id="+plot.bondHM">
+<code class="descclassname">+plot.</code><code class="descname">bondHM</code><span class="sig-paren">(</span><em>Struct</em>, <em>Lx</em>, <em>Ly</em>, <em>fieldName</em><span class="sig-paren">)</span><a class="headerlink" href="#+plot.bondHM" title="Permalink to this definition">¶</a></dt>
+<dd><p>BOND HM</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="+plot.bresenham">
+<code class="descclassname">+plot.</code><code class="descname">bresenham</code><span class="sig-paren">(</span><em>x1</em>, <em>y1</em>, <em>x2</em>, <em>y2</em><span class="sig-paren">)</span><a class="headerlink" href="#+plot.bresenham" title="Permalink to this definition">¶</a></dt>
+<dd><p>Matlab optmized version of Bresenham line algorithm. No loops.
+Format:</p>
+<blockquote>
+<div>[x y]=bham(x1,y1,x2,y2)</div></blockquote>
+<dl class="docutils">
+<dt>Input:</dt>
+<dd>(x1,y1): Start position
+(x2,y2): End position</dd>
+<dt>Output:</dt>
+<dd>x y: the line coordinates from (x1,y1) to (x2,y2)</dd>
+<dt>Usage example:</dt>
+<dd>[x y]=bham(1,1, 10,-5);
+plot(x,y,’or’);</dd>
+</dl>
+</dd></dl>
+
+<dl class="function">
+<dt id="+plot.brewermap">
+<code class="descclassname">+plot.</code><code class="descname">brewermap</code><span class="sig-paren">(</span><em>N</em>, <em>scheme</em><span class="sig-paren">)</span><a class="headerlink" href="#+plot.brewermap" title="Permalink to this definition">¶</a></dt>
+<dd><p>The complete selection of ColorBrewer colorschemes (RGB colormaps).</p>
+<ol class="loweralpha simple" start="3">
+<li>2016 Stephen Cobeldick</li>
+</ol>
+<p>Returns any RGB colormap from the ColorBrewer colorschemes, especially
+intended for mapping and plots with attractive, distinguishable colors.</p>
+<dl class="docutils">
+<dt>Syntax (basic):</dt>
+<dd>map = brewermap(N,scheme); % Select colormap length, select any colorscheme.
+brewermap(‘demo’)          % View a figure showing all ColorBrewer colorschemes.
+schemes = brewermap(‘list’)% Return a list of all ColorBrewer colorschemes.
+[map,num,typ] = brewermap(…); % The current colorscheme’s number of nodes and type.</dd>
+<dt>Syntax (preselect colorscheme):</dt>
+<dd>old = brewermap(scheme); % Preselect any colorscheme, return the previous scheme.
+map = brewermap(N);      % Use preselected scheme, select colormap length.
+map = brewermap;         % Use preselected scheme, length same as current figure’s colormap.</dd>
+</dl>
+<p>See also CUBEHELIX RGBPLOT3 RGBPLOT COLORMAP COLORBAR PLOT PLOT3 SURF IMAGE AXES SET JET LBMAP PARULA</p>
+<p>Color Schemes %%</p>
+<p>This product includes color specifications and designs developed by Cynthia Brewer.
+See the ColorBrewer website for further information about each colorscheme,
+colour-blind suitability, licensing, and citations: <a class="reference external" href="http://colorbrewer.org/">http://colorbrewer.org/</a></p>
+<p>To reverse the colormap sequence simply prefix the string token with ‘*’.</p>
+<p>Each colorscheme is defined by a set of hand-picked RGB values (nodes).
+If &lt;N&gt; is greater than the requested colorscheme’s number of nodes then:</p>
+<blockquote>
+<div><ul class="simple">
+<li>Sequential and Diverging schemes are interpolated to give a larger
+colormap. The interpolation is performed in the Lab colorspace.</li>
+<li>Qualitative schemes are repeated to give a larger colormap.</li>
+</ul>
+</div></blockquote>
+<dl class="docutils">
+<dt>Else:</dt>
+<dd><ul class="first last simple">
+<li>Exact values from the ColorBrewer sequences are returned for all schemes.</li>
+</ul>
+</dd>
+</dl>
+<p>Diverging</p>
+<p>Scheme|’BrBG’|’PRGn’|’PiYG’|’PuOr’|’RdBu’|’RdGy’|’RdYlBu’|’RdYlGn’|’Spectral’|
+——<a href="#id11"><span class="problematic" id="id12">|------|</span></a>——<a href="#id13"><span class="problematic" id="id14">|------|</span></a>——<a href="#id15"><span class="problematic" id="id16">|------|</span></a>——<a href="#id17"><span class="problematic" id="id18">|--------|</span></a>——–<a href="#id19"><span class="problematic" id="id20">|----------|</span></a>
+Nodes |  11  |  11  |  11  |  11  |  11  |  11  |   11   |   11   |    11    |</p>
+<p>Qualitative</p>
+<p>Scheme|’Accent’|’Dark2’|’Paired’|’Pastel1’|’Pastel2’|’Set1’|’Set2’|’Set3’|
+——<a href="#id21"><span class="problematic" id="id22">|--------|</span></a>——-<a href="#id23"><span class="problematic" id="id24">|--------|</span></a>———<a href="#id25"><span class="problematic" id="id26">|---------|</span></a>——<a href="#id27"><span class="problematic" id="id28">|------|</span></a>——|
+Nodes |   8    |   8   |   12   |    9    |    8    |   9  |  8   |  12  |</p>
+<p>Sequential</p>
+<p>Scheme|’Blues’|’BuGn’|’BuPu’|’GnBu’|’Greens’|’Greys’|’OrRd’|’Oranges’|’PuBu’|
+——<a href="#id29"><span class="problematic" id="id30">|-------|</span></a>——<a href="#id31"><span class="problematic" id="id32">|------|</span></a>——<a href="#id33"><span class="problematic" id="id34">|--------|</span></a>——-<a href="#id35"><span class="problematic" id="id36">|------|</span></a>———<a href="#id37"><span class="problematic" id="id38">|------|</span></a>
+Nodes |   9   |  9   |  9   |  9   |   9    |   9   |  9   |    9    |  9   |</p>
+<p>Scheme|’PuBuGn’|’PuRd’|’Purples’|’RdPu’|’Reds’|’YlGn’|’YlGnBu’|’YlOrBr’|’YlOrRd’|
+——<a href="#id39"><span class="problematic" id="id40">|--------|</span></a>——<a href="#id41"><span class="problematic" id="id42">|---------|</span></a>——<a href="#id43"><span class="problematic" id="id44">|------|</span></a>——<a href="#id45"><span class="problematic" id="id46">|--------|</span></a>——–<a href="#id47"><span class="problematic" id="id48">|--------|</span></a>
+Nodes |   9    |  9   |    9    |  9   |  9   |  9   |   9    |   9    |   9    |</p>
+<p>Examples %%</p>
+<p>Plot a scheme’s RGB values:
+rgbplot(brewermap(9,’Blues’))  % standard
+rgbplot(brewermap(9,’<a href="#id1"><span class="problematic" id="id2">*</span></a>Blues’)) % reversed</p>
+<p>View information about a colorscheme:
+[~,num,typ] = brewermap(0,’Paired’)
+num = 12
+typ = ‘Qualitative’</p>
+<p>Multi-line plot using matrices:
+N = 6;
+axes(‘ColorOrder’,brewermap(N,’Pastel2’),’NextPlot’,’replacechildren’)
+X = linspace(0,pi*3,1000);
+Y = bsxfun(&#64;(x,n)n*sin(x+2*n*pi/N), X(:), 1:N);
+plot(X,Y, ‘linewidth’,4)</p>
+<p>Multi-line plot in a loop:
+N = 6;
+set(0,’DefaultAxesColorOrder’,brewermap(N,’Accent’))
+X = linspace(0,pi*3,1000);
+Y = bsxfun(&#64;(x,n)n*sin(x+2*n*pi/N), X(:), 1:N);
+for n = 1:N</p>
+<blockquote>
+<div>plot(X(:),Y(:,n), ‘linewidth’,4);
+hold all</div></blockquote>
+<p>end</p>
+<p>New colors for the COLORMAP example:
+load spine
+image(X)
+colormap(brewermap([],’YlGnBu’))</p>
+<p>New colors for the SURF example:
+[X,Y,Z] = peaks(30);
+surfc(X,Y,Z)
+colormap(brewermap([],’RdYlGn’))
+axis([-3,3,-3,3,-10,5])</p>
+<p>New colors for the CONTOURCMAP example:
+brewermap(‘PuOr’); % preselect the colorscheme.
+load topo
+load coast
+figure
+worldmap(topo, topolegend)
+contourfm(topo, topolegend);
+contourcmap(‘brewermap’, ‘Colorbar’,’on’, ‘Location’,’horizontal’,…
+‘TitleString’,’Contour Intervals in Meters’);
+plotm(lat, long, ‘k’)</p>
+<p>Input and Output Arguments %%</p>
+<p>Inputs (<a href="#id3"><span class="problematic" id="id4">*</span></a>==default):
+N = NumericScalar, N&gt;=0, an integer to define the colormap length.</p>
+<blockquote>
+<div>= <a href="#id5"><span class="problematic" id="id6">*</span></a>[], use the length of the current figure’s colormap (see COLORMAP).
+= StringToken, to preselect this ColorBrewer scheme for later use.
+= ‘demo’, create a figure showing all of the ColorBrewer schemes.
+= ‘list’, return a cell array of strings listing all ColorBrewer schemes.</div></blockquote>
+<dl class="docutils">
+<dt>scheme = StringToken, a ColorBrewer scheme name to select the colorscheme.</dt>
+<dd>= <a href="#id7"><span class="problematic" id="id8">*</span></a>none, use the preselected colorscheme (must be set previously!).</dd>
+</dl>
+<p>Outputs:
+map = NumericMatrix, size Nx3, a colormap of RGB values between 0 and 1.
+num = NumericScalar, the number of nodes defining the ColorBrewer scheme.
+typ = String, the colorscheme type: ‘Diverging’/’Qualitative’/’Sequential’.
+OR
+schemes = CellArray of Strings, a list of every ColorBrewer scheme.</p>
+<p>[map,num,typ] = brewermap(<a href="#id9"><span class="problematic" id="id10">*</span></a>N,*scheme)
+OR
+schemes = brewermap(‘list’)</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="+plot.cellHM">
+<code class="descclassname">+plot.</code><code class="descname">cellHM</code><span class="sig-paren">(</span><em>Theta</em>, <em>bulkCells</em>, <em>L</em>, <em>Struct</em>, <em>T</em><span class="sig-paren">)</span><a class="headerlink" href="#+plot.cellHM" title="Permalink to this definition">¶</a></dt>
+<dd><p>PLOT_THETA Plots the fitted theta back onto the movie</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="+plot.cellTensor">
+<code class="descclassname">+plot.</code><code class="descname">cellTensor</code><span class="sig-paren">(</span><em>Struct</em>, <em>stress</em>, <em>iCells</em><span class="sig-paren">)</span><a class="headerlink" href="#+plot.cellTensor" title="Permalink to this definition">¶</a></dt>
+<dd><p>PLOT_THETA Plots the fitted theta back onto the movie</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="+plot.curveSkel">
+<code class="descclassname">+plot.</code><code class="descname">curveSkel</code><span class="sig-paren">(</span><em>Struct</em>, <em>color</em>, <em>mem</em><span class="sig-paren">)</span><a class="headerlink" href="#+plot.curveSkel" title="Permalink to this definition">¶</a></dt>
+<dd><p>INFERCURVE Summary of this function goes here
+Detailed explanation goes here</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="+plot.curvedTension">
+<code class="descclassname">+plot.</code><code class="descname">curvedTension</code><span class="sig-paren">(</span><em>Struct</em>, <em>mode</em><span class="sig-paren">)</span><a class="headerlink" href="#+plot.curvedTension" title="Permalink to this definition">¶</a></dt>
+<dd><p>INFERCURVE Summary of this function goes here
+Detailed explanation goes here</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="+plot.dividingCell">
+<code class="descclassname">+plot.</code><code class="descname">dividingCell</code><span class="sig-paren">(</span><em>L</em>, <em>mitCell</em>, <em>ID</em>, <em>mode</em><span class="sig-paren">)</span><a class="headerlink" href="#+plot.dividingCell" title="Permalink to this definition">¶</a></dt>
+<dd><p>DIVIDINGCELL Summary of this function goes here
+Detailed explanation goes here</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="+plot.edgeHM">
+<code class="descclassname">+plot.</code><code class="descname">edgeHM</code><span class="sig-paren">(</span><em>Struct</em>, <em>T</em><span class="sig-paren">)</span><a class="headerlink" href="#+plot.edgeHM" title="Permalink to this definition">¶</a></dt>
+<dd><p>SKELETONIZE_VERTS Takes the network topology and triangulated position of
+vertices to produce a skeletonized image.</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="+plot.histf">
+<code class="descclassname">+plot.</code><code class="descname">histf</code><span class="sig-paren">(</span><em>Y</em>, <em>varargin</em><span class="sig-paren">)</span><a class="headerlink" href="#+plot.histf" title="Permalink to this definition">¶</a></dt>
+<dd><p>HISTF plots formatted histograms. It’s similar to hist, but with more
+options for FaceColor, BarWidth, LineStyle, FaceAlpha, etc.</p>
+<blockquote>
+<div><p>Syntax</p>
+<blockquote>
+<div>histf(Y)
+histf(Y,x)
+histf(Y,nbins)
+histf(…,’BarWidth’,BarWidth)
+histf(…,’FaceColor’,FaceColor)
+histf(…,’EdgeColor’,EdgeColor)
+histf(…,’LineStyle’,LineStyle)
+histf(…,’LineWidth’,LineWidth)
+histf(…,’FaceAlpha’,FaceAlpha)
+histf(…,’EdgeAlpha’,EdgeAlpha)
+histf(…,’Alpha’,Alpha)
+[n,xout,h] = histf(…)</div></blockquote>
+<p>Description</p>
+<p>histf(Y) bins the elements in vector Y into 10 equally spaced containers and 
+returns the number of elements in each container as a row vector. If Y is an m-by-p 
+matrix, histf treats the columns of Y as vectors. No elements of Y can be complex 
+or of type integer.</p>
+<p>histf(Y,x) where x is a vector, returns the distribution of Y among length(x)
+bins with centers specified by x. For example, if x is a 5-element vector, histf
+distributes the elements of Y into five bins centered on the x-axis at the elements in
+x, none of which can be complex.</p>
+<p>histf(Y,nbins) where nbins is a scalar, uses nbins number of bins.</p>
+<p>histf(…,’BarWidth’,BarWidth) specifies the width of bars as a
+fraction of total space available for each bar. Default BarWidth is 1.</p>
+<p>histf(…,’FaceColor’,FaceColor) specifies face color as a short name, long name, or 
+RGB triple.</p>
+<p>histf(…,’EdgeColor’,EdgeColor) specifies edge coloras a short name, long name, or 
+RGB triple.</p>
+<p>histf(…,’LineStyle’,LineStyle) specifies line style of bar edges. Can
+be ‘-‘ (default), ‘:’, ‘–’, ‘-.’, or ‘none’.</p>
+<p>histf(…,’LineWidth’,LineWidth) specifies line width of bar edge in
+points. Default LineWidth is 0.5 points.</p>
+<p>histf(…,’FaceAlpha’,FaceAlpha) specifies transparency value of bar
+faces. FaceAlpha must be a scalar between 0 and 1. Default value is 1.</p>
+<p>histf(…,’EdgeAlpha’,EdgeAlpha) specifies transparency value of bar
+edges. EdgeAlpha must be a scalar between 0 and 1. Default value is 1.</p>
+<p>histf(…,’Alpha’,Alpha) sets FaceAlpha and EdgeAlpha to Alpha.</p>
+<p>[n,xout,h] = histf(…) returns vectors n and xout containing the frequency counts 
+and the bin locations. h is the handle of the newly plotted histogram.</p>
+<p>Author Info
+This function was written by Chad A. Greene of the University of Texas at
+Austin’s Institute for Geophysics (UTIG). August 2014.</p>
+<p>See also hist, histc, bar, alpha, and legalpha.</p>
+</div></blockquote>
+</dd></dl>
+
+<dl class="function">
+<dt id="+plot.imgSkel">
+<code class="descclassname">+plot.</code><code class="descname">imgSkel</code><span class="sig-paren">(</span><em>Struct</em>, <em>X</em>, <em>Y</em>, <em>mode</em><span class="sig-paren">)</span><a class="headerlink" href="#+plot.imgSkel" title="Permalink to this definition">¶</a></dt>
+<dd><p>SKELETONIZE_VERTS Takes the network topology and triangulated position of
+vertices to produce a skeletonized image.</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="+plot.imoverlay">
+<code class="descclassname">+plot.</code><code class="descname">imoverlay</code><span class="sig-paren">(</span><em>in</em>, <em>mask</em>, <em>color</em><span class="sig-paren">)</span><a class="headerlink" href="#+plot.imoverlay" title="Permalink to this definition">¶</a></dt>
+<dd><p>IMOVERLAY Create a mask-based image overlay.
+OUT = IMOVERLAY(IN, MASK, COLOR) takes an input image, IN, and a binary
+image, MASK, and produces an output image whose pixels in the MASK
+locations have the specified COLOR.</p>
+<p>IN should be a grayscale or an RGB image of class uint8, uint16, int16,
+logical, double, or single.  If IN is double or single, it should be in
+the range [0, 1].  If it is not in that range, you might want to use
+mat2gray to scale it into that range.</p>
+<p>MASK should be a two-dimensional logical matrix.</p>
+<p>COLOR should be a 1-by-3 vector of values in the range [0, 1].  [0 0 0]
+is black, and [1 1 1] is white.</p>
+<p>OUT is a uint8 RGB image.</p>
+<p>Overlay edge detection result in green over the original image.</p>
+<blockquote>
+<div>I = imread(‘cameraman.tif’);
+bw = edge(I, ‘canny’);
+rgb = imoverlay(I, bw, [0 1 0]);
+imshow(rgb)</div></blockquote>
+<p>Treating the output of peaks as an image, overlay the values greater than
+7 in red.  The output of peaks is not in the usual grayscale image range
+of [0, 1], so use mat2gray to scale it.</p>
+<blockquote>
+<div>I = peaks;
+mask = I &gt; 7;
+rgb = imoverlay(mat2gray(I), mask, [1 0 0]);
+imshow(rgb, ‘InitialMagnification’, ‘fit’)</div></blockquote>
+</dd></dl>
+
+<dl class="function">
+<dt id="+plot.inferCurve">
+<code class="descclassname">+plot.</code><code class="descname">inferCurve</code><span class="sig-paren">(</span><em>Struct</em>, <em>mem</em><span class="sig-paren">)</span><a class="headerlink" href="#+plot.inferCurve" title="Permalink to this definition">¶</a></dt>
+<dd><p>INFERCURVE Summary of this function goes here
+Detailed explanation goes here</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="+plot.inferCurveVertex">
+<code class="descclassname">+plot.</code><code class="descname">inferCurveVertex</code><span class="sig-paren">(</span><em>Struct</em>, <em>mem</em><span class="sig-paren">)</span><a class="headerlink" href="#+plot.inferCurveVertex" title="Permalink to this definition">¶</a></dt>
+<dd><p>INFERCURVE Summary of this function goes here
+Detailed explanation goes here</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="+plot.myo">
+<code class="descclassname">+plot.</code><code class="descname">myo</code><span class="sig-paren">(</span><em>Struct</em>, <em>smoothSize</em><span class="sig-paren">)</span><a class="headerlink" href="#+plot.myo" title="Permalink to this definition">¶</a></dt>
+<dd><p>SKELETONIZE_VERTS Takes the network topology and triangulated position of
+vertices to produce a skeletonized image.</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="+plot.niceHist">
+<code class="descclassname">+plot.</code><code class="descname">niceHist</code><span class="sig-paren">(</span><em>data</em>, <em>nbins</em><span class="sig-paren">)</span><a class="headerlink" href="#+plot.niceHist" title="Permalink to this definition">¶</a></dt>
+<dd><p>NICE HIST</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="+plot.notBoxPlot">
+<code class="descclassname">+plot.</code><code class="descname">notBoxPlot</code><span class="sig-paren">(</span><em>y</em>, <em>x</em>, <em>varargin</em><span class="sig-paren">)</span><a class="headerlink" href="#+plot.notBoxPlot" title="Permalink to this definition">¶</a></dt>
+<dd><p>notBoxPlot - Doesn’t plot box plots!</p>
+<p>function notBoxPlot(y,x,’Param1’,val1,’Param2’,val2,…)</p>
+<p>Purpose
+An alternative to a box plot, where the focus is on showing raw
+data. Plots columns of y as different groups located at points
+along the x axis defined by the optional vector x. Points are
+layed over a 1.96 SEM (95% confidence interval) in red and a 1 SD
+in blue. The user has the option of plotting the SEM and SD as a
+line rather than area. Raw data are jittered along x for clarity. This
+function is suited to displaying data which are normally distributed.
+Since, for instance, the SEM is meaningless if the data are bimodally
+distributed.</p>
+<p>Inputs
+y - each column of y is one variable/group. If x is missing or empty</p>
+<blockquote>
+<div>then each column is plotted in a different x position.</div></blockquote>
+<dl class="docutils">
+<dt>x - [optional], the x axis points at which y columns should be</dt>
+<dd>plotted. This allows more than one set of y values to appear
+at one x location. Such instances are coloured differently. 
+Contrast the first two panels in Example 1 to see how this input behaves.</dd>
+</dl>
+<p>Note that if x and y are both vectors of the same length this function
+behaves like boxplot (see Example 5).</p>
+<p>Parameter/Value paies
+‘jitter’ - how much to jitter the data for visualization</p>
+<blockquote>
+<div>(optional). The width of the boxes are automatically
+scaled to the jitter magnitude. If jetter is empty or
+missing then a default value is used.</div></blockquote>
+<dl class="docutils">
+<dt>‘style’ - a string defining plot style of the data.</dt>
+<dd><dl class="first last docutils">
+<dt>‘patch’ [default] - plots 95% SEM (by default, see below) and SD as a </dt>
+<dd>box using patch objects.</dd>
+<dt>‘line’ - create a plot where the SD and 95% SEM (see below) are</dt>
+<dd>constructed from lines.</dd>
+<dt>‘sdline’ - a hybrid of the above, in which only the SD is </dt>
+<dd>replaced with a line.</dd>
+</dl>
+</dd>
+<dt>‘interval’ - ‘SEM’ [default] Plots a 95% confidence interval for the mean</dt>
+<dd><ul class="first last simple">
+<li>‘tInterval’ Plots a 95% t-interval for the mean</li>
+</ul>
+</dd>
+<dt>‘markMedian’ - false [default] if true the median value is highlighted</dt>
+<dd>The median is highlighted as a dotted line or an open square 
+(if “line” style was used).</dd>
+</dl>
+<p>Outputs (all area optional)
+H - structure of handles for plot objects.
+stats - the values of the mean, SD, etc, used for the plots</p>
+<p>Example 1 - simple example
+clf 
+subplot(2,2,1)  
+notBoxPlot(randn(20,5));
+subplot(2,2,2)  
+notBoxPlot(randn(20,5),[1:4,7]);
+subplot(2,2,3:4)
+h=notBoxPlot(randn(10,40));
+d=[h.data];
+set(d(1:4:end),’markerfacecolor’,[0.4,1,0.4],’color’,[0,0.4,0])</p>
+<p>Example 2 - overlaying with areas
+clf  
+x=[1,2,3,4,5,5];
+y=randn(20,length(x));
+y(:,end)=y(:,end)+3;
+y(:,end-1)=y(:,end-1)-1;
+notBoxPlot(y,x);</p>
+<p>Example 3 - lines
+clf
+H=notBoxPlot(randn(20,5),[],’style’,’line’);
+set([H.data],’markersize’,10)</p>
+<p>Example 4 - mix lines and areas [note that the way this function
+sets the x axis limits can cause problems when combining plots
+this way]</p>
+<p>clf
+h=notBoxPlot(randn(10,1)+4,5,’style’,’line’);
+set(h.data,’color’,’m’)  
+h=notBoxPlot(randn(50,10));
+set(h(5).data,’color’,’m’)</p>
+<p>Example 5 - x and y are vectors
+clf
+x=[1,1,1,3,2,1,3,3,3,2,2,3,3];
+y=[7,8,6,1,5,7,2,1,3,4,5,2,4];
+notBoxPlot(y,x);</p>
+<p>Note: an alternative to the style used in Example 5 is to call
+notBoxPlot from a loop in an external function. In this case, the
+user will have to take care of the x-ticks and axis limits.</p>
+<p>Example 6 - replacing the SD with bars
+clf
+y=randn(50,1);
+clf
+notBoxPlot(y,1,’style’,’sdline’)
+notBoxPlot(y,2)   
+xlim([0,3])</p>
+<p>Example 7 - the effect of jitter (default jitter is 0.3)
+clf
+subplot(2,1,1)
+notBoxPlot(randn(20,5),[],’jitter’,0.15)
+subplot(2,1,2)
+notBoxPlot(randn(20,5),[],’jitter’,0.75);</p>
+<p>Example 8 - The 95% SEM vs the 95% t-interval
+clf
+y=randn(8,3);
+subplot(1,2,1)
+notBoxPlot(y), title(‘95% SEM (n=8)’)</p>
+<p>subplot(1,2,2)
+notBoxPlot(y,[],’interval’,’tInterval’), title(‘95% t-interval (n=8)’)</p>
+<p>Example 8 - Add the median (dotted line) to plots
+clf
+n=[5,10,20,40];
+for ii=1:4, rng(555), notBoxPlot(rand(1,n(ii)),ii,’markMedian’,true), end</p>
+<p>Rob Campbell - August 2016</p>
+<p>Also see: boxplot, NBP.example</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="+plot.segmentation">
+<code class="descclassname">+plot.</code><code class="descname">segmentation</code><span class="sig-paren">(</span><em>raw</em>, <em>L</em>, <em>alpha</em><span class="sig-paren">)</span><a class="headerlink" href="#+plot.segmentation" title="Permalink to this definition">¶</a></dt>
+<dd><p>SEGMENTATION</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="+plot.skel">
+<code class="descclassname">+plot.</code><code class="descname">skel</code><span class="sig-paren">(</span><em>Struct</em>, <em>color</em>, <em>mode</em><span class="sig-paren">)</span><a class="headerlink" href="#+plot.skel" title="Permalink to this definition">¶</a></dt>
+<dd><p>SKELETONIZE_VERTS Takes the network topology and triangulated position of
+vertices to produce a skeletonized image.</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="+plot.tension">
+<code class="descclassname">+plot.</code><code class="descname">tension</code><span class="sig-paren">(</span><em>Struct</em>, <em>mode</em><span class="sig-paren">)</span><a class="headerlink" href="#+plot.tension" title="Permalink to this definition">¶</a></dt>
+<dd><p>SKELETONIZE_VERTS Takes the network topology and triangulated position of
+vertices to produce a skeletonized image.</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="+plot.trackCell">
+<code class="descclassname">+plot.</code><code class="descname">trackCell</code><span class="sig-paren">(</span><em>series</em>, <em>L</em>, <em>t0</em><span class="sig-paren">)</span><a class="headerlink" href="#+plot.trackCell" title="Permalink to this definition">¶</a></dt>
+<dd><p>TRACKCELL</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="+plot.trackedBonds">
+<code class="descclassname">+plot.</code><code class="descname">trackedBonds</code><span class="sig-paren">(</span><em>Struct</em>, <em>cPair</em>, <em>skel</em>, <em>T</em><span class="sig-paren">)</span><a class="headerlink" href="#+plot.trackedBonds" title="Permalink to this definition">¶</a></dt>
+<dd><p>PLOT_TRACKED_VERTS Plots the tracer line between tracked verts</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="+plot.trackedCells">
+<code class="descclassname">+plot.</code><code class="descname">trackedCells</code><span class="sig-paren">(</span><em>Struct</em>, <em>cellPairs</em>, <em>skel</em>, <em>T</em><span class="sig-paren">)</span><a class="headerlink" href="#+plot.trackedCells" title="Permalink to this definition">¶</a></dt>
+<dd><p>PLOT_TRACKED_VERTS Plots the tracer line between tracked verts</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="+plot.trackedVerts">
+<code class="descclassname">+plot.</code><code class="descname">trackedVerts</code><span class="sig-paren">(</span><em>Struct</em>, <em>vertexPairs</em>, <em>cellPairs</em>, <em>skel</em>, <em>T</em><span class="sig-paren">)</span><a class="headerlink" href="#+plot.trackedVerts" title="Permalink to this definition">¶</a></dt>
+<dd><p>PLOT_TRACKED_VERTS Plots the tracer line between tracked verts</p>
+</dd></dl>
+
+</div>
+
+
+           </div>
+           
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+      
+        <a href="embedSpace.html" class="btn btn-neutral" title="embedSpace" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2018, Nicholas Noll.
+
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/rtfd/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  
+
+    <script type="text/javascript">
+        var DOCUMENTATION_OPTIONS = {
+            URL_ROOT:'./',
+            VERSION:'v1.0',
+            LANGUAGE:'None',
+            COLLAPSE_INDEX:false,
+            FILE_SUFFIX:'.html',
+            HAS_SOURCE:  true,
+            SOURCELINK_SUFFIX: '.txt'
+        };
+    </script>
+      <script type="text/javascript" src="_static/jquery.js"></script>
+      <script type="text/javascript" src="_static/underscore.js"></script>
+      <script type="text/javascript" src="_static/doctools.js"></script>
+      <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+
+  
+
+  <script type="text/javascript" src="_static/js/theme.js"></script>
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

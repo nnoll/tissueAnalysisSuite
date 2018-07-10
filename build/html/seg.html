@@ -1,0 +1,377 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>seg &mdash; tissueAnalysisSuite v1.0 documentation</title>
+  
+
+  
+  
+  
+  
+
+  
+
+  
+  
+    
+
+  
+
+  <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="smooth" href="smooth.html" />
+    <link rel="prev" title="measure" href="measure.html" /> 
+
+  
+  <script src="_static/js/modernizr.min.js"></script>
+
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search">
+          
+
+          
+            <a href="index.html" class="icon icon-home"> tissueAnalysisSuite
+          
+
+          
+          </a>
+
+          
+            
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <p class="caption"><span class="caption-text">Namespaces:</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="track.html">track</a></li>
+<li class="toctree-l1"><a class="reference internal" href="fitDual.html">fitDual</a></li>
+<li class="toctree-l1"><a class="reference internal" href="continuum.html">continuum</a></li>
+<li class="toctree-l1"><a class="reference internal" href="load.html">load</a></li>
+<li class="toctree-l1"><a class="reference internal" href="generated.html">generate</a></li>
+<li class="toctree-l1"><a class="reference internal" href="interpolate.html">interpolate</a></li>
+<li class="toctree-l1"><a class="reference internal" href="isogonal.html">isogonal</a></li>
+<li class="toctree-l1"><a class="reference internal" href="measure.html">measure</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">seg</a></li>
+<li class="toctree-l1"><a class="reference internal" href="smooth.html">smooth</a></li>
+<li class="toctree-l1"><a class="reference internal" href="pressure.html">pressure</a></li>
+<li class="toctree-l1"><a class="reference internal" href="save.html">save</a></li>
+<li class="toctree-l1"><a class="reference internal" href="MI.html">MI</a></li>
+<li class="toctree-l1"><a class="reference internal" href="embedSpace.html">embedSpace</a></li>
+<li class="toctree-l1"><a class="reference internal" href="plot.html">plot</a></li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="index.html">tissueAnalysisSuite</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="index.html">Docs</a> &raquo;</li>
+        
+      <li>seg</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+            <a href="_sources/seg.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="module-+seg">
+<span id="seg"></span><h1>seg<a class="headerlink" href="#module-+seg" title="Permalink to this headline">¶</a></h1>
+<dl class="function">
+<dt id="+seg.CircleFitByPratt">
+<code class="descclassname">+seg.</code><code class="descname">CircleFitByPratt</code><span class="sig-paren">(</span><em>XY</em><span class="sig-paren">)</span><a class="headerlink" href="#+seg.CircleFitByPratt" title="Permalink to this definition">¶</a></dt>
+<dd><blockquote>
+<div><dl class="docutils">
+<dt>Circle fit by Pratt</dt>
+<dd>V. Pratt, “Direct least-squares fitting of algebraic surfaces”,
+Computer Graphics, Vol. 21, pages 145-152 (1987)</dd>
+</dl>
+<p>Input:  XY(n,2) is the array of coordinates of n points x(i)=XY(i,1), y(i)=XY(i,2)</p>
+<dl class="docutils">
+<dt>Output: Par = [a b R] is the fitting circle:</dt>
+<dd>center (a,b) and radius R</dd>
+<dt>Note: this fit does not use built-in matrix functions (except “mean”),</dt>
+<dd>so it can be easily programmed in any programming language</dd>
+</dl>
+</div></blockquote>
+</dd></dl>
+
+<dl class="function">
+<dt id="+seg.count_unique">
+<code class="descclassname">+seg.</code><code class="descname">count_unique</code><span class="sig-paren">(</span><em>x</em>, <em>option</em><span class="sig-paren">)</span><a class="headerlink" href="#+seg.count_unique" title="Permalink to this definition">¶</a></dt>
+<dd><p>COUNT_UNIQUE  Determines unique values, and counts occurrences
+[uniques,numUnique] = count_unique(x)</p>
+<p>This function determines unique values of an array, and also counts the
+number of instances of those values.</p>
+<p>This uses the MATLAB builtin function accumarray, and is faster than
+MATLAB’s unique function for intermediate to large sizes of arrays for integer values.  
+Unlike ‘unique’ it cannot be used to determine if rows are unique or 
+operate on cell arrays.</p>
+<p>If float values are passed, it uses MATLAB’s logic builtin unique function to
+determine unique values, and then to count instances.</p>
+<p>Descriptions of Input Variables:
+x:  Input vector or matrix, N-D.  Must be a type acceptable to</p>
+<blockquote>
+<div>accumarray, numeric, logical, char, scalar, or cell array of
+strings.</div></blockquote>
+<dl class="docutils">
+<dt>option: Acceptable values currently only ‘float’.  If ‘float’ is</dt>
+<dd>specified, the input x vector will be treated as containing
+decimal values, regardless of whether it is a float array type.</dd>
+</dl>
+<p>Descriptions of Output Variables:
+uniques:    sorted unique values
+numUnique:  number of instances of each unique value</p>
+<p>Example(s):
+&gt;&gt; [uniques] = count_unique(largeArray);
+&gt;&gt; [uniques,numUnique] = count_unique(largeArray);</p>
+<p>See also: unique, accumarray</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="+seg.curvature">
+<code class="descclassname">+seg.</code><code class="descname">curvature</code><span class="sig-paren">(</span><em>Struct</em>, <em>dim</em><span class="sig-paren">)</span><a class="headerlink" href="#+seg.curvature" title="Permalink to this definition">¶</a></dt>
+<dd><p>EXTRACT_CURVATURE. This algorithm takes in a data structure WITH bond
+information, and computes the curvature of each bond in the image. Data is
+stored and then output in an updated data structure.</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="+seg.findInteriorHoles">
+<code class="descclassname">+seg.</code><code class="descname">findInteriorHoles</code><span class="sig-paren">(</span><em>Struct</em>, <em>L</em><span class="sig-paren">)</span><a class="headerlink" href="#+seg.findInteriorHoles" title="Permalink to this definition">¶</a></dt>
+<dd><p>FIND INTERIOR HOLES</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="+seg.find_cells">
+<code class="descclassname">+seg.</code><code class="descname">find_cells</code><span class="sig-paren">(</span><em>Vdat</em>, <em>L</em><span class="sig-paren">)</span><a class="headerlink" href="#+seg.find_cells" title="Permalink to this definition">¶</a></dt>
+<dd><p>S=regionprops(L,’Area’,’Orientation’,’Perimeter’,’Centroid’,’Eccentricity’,’PixelIdxList’,’MajorAxisLength’,’MinorAxisLength’);</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="+seg.find_vertices">
+<code class="descclassname">+seg.</code><code class="descname">find_vertices</code><span class="sig-paren">(</span><em>L</em>, <em>threeFold</em><span class="sig-paren">)</span><a class="headerlink" href="#+seg.find_vertices" title="Permalink to this definition">¶</a></dt>
+<dd><p>Find position of all vertices</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="+seg.fitToCircle">
+<code class="descclassname">+seg.</code><code class="descname">fitToCircle</code><span class="sig-paren">(</span><em>rData</em>, <em>nB</em>, <em>x0</em>, <em>D</em><span class="sig-paren">)</span><a class="headerlink" href="#+seg.fitToCircle" title="Permalink to this definition">¶</a></dt>
+<dd><p>FITTOCIRCLE</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="+seg.get_bCells">
+<code class="descclassname">+seg.</code><code class="descname">get_bCells</code><span class="sig-paren">(</span><em>bStruct</em><span class="sig-paren">)</span><a class="headerlink" href="#+seg.get_bCells" title="Permalink to this definition">¶</a></dt>
+<dd><p>GET_BCELLS</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="+seg.makeConvexArray">
+<code class="descclassname">+seg.</code><code class="descname">makeConvexArray</code><span class="sig-paren">(</span><em>Struct</em>, <em>extCell</em><span class="sig-paren">)</span><a class="headerlink" href="#+seg.makeConvexArray" title="Permalink to this definition">¶</a></dt>
+<dd><p>MAKE CONVEX ARRAY</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="+seg.order_cells">
+<code class="descclassname">+seg.</code><code class="descname">order_cells</code><span class="sig-paren">(</span><em>Struct</em><span class="sig-paren">)</span><a class="headerlink" href="#+seg.order_cells" title="Permalink to this definition">¶</a></dt>
+<dd><p>ORDER_CELLS</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="+seg.recordBonds">
+<code class="descclassname">+seg.</code><code class="descname">recordBonds</code><span class="sig-paren">(</span><em>Struct</em>, <em>L</em><span class="sig-paren">)</span><a class="headerlink" href="#+seg.recordBonds" title="Permalink to this definition">¶</a></dt>
+<dd><p>RECORD_CHEMISTRY</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="+seg.removeBadCells">
+<code class="descclassname">+seg.</code><code class="descname">removeBadCells</code><span class="sig-paren">(</span><em>Struct</em>, <em>L_t</em>, <em>mode</em><span class="sig-paren">)</span><a class="headerlink" href="#+seg.removeBadCells" title="Permalink to this definition">¶</a></dt>
+<dd><p>RM_BADCELLS Removes ‘bubble’ cells that only have two verts in the
+segmented image.</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="+seg.removeBorderCells">
+<code class="descclassname">+seg.</code><code class="descname">removeBorderCells</code><span class="sig-paren">(</span><em>L</em>, <em>Struct</em><span class="sig-paren">)</span><a class="headerlink" href="#+seg.removeBorderCells" title="Permalink to this definition">¶</a></dt>
+<dd><p>REMOVE BORDER CELLS</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="+seg.removeFourFold">
+<code class="descclassname">+seg.</code><code class="descname">removeFourFold</code><span class="sig-paren">(</span><em>Struct</em><span class="sig-paren">)</span><a class="headerlink" href="#+seg.removeFourFold" title="Permalink to this definition">¶</a></dt>
+<dd><p>REMOVEFOURFOLD</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="+seg.returnBondStatistics">
+<code class="descclassname">+seg.</code><code class="descname">returnBondStatistics</code><span class="sig-paren">(</span><em>Struct</em><span class="sig-paren">)</span><a class="headerlink" href="#+seg.returnBondStatistics" title="Permalink to this definition">¶</a></dt>
+<dd><p>RETURNBONDSTATISTICS</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="+seg.threefold_cell">
+<code class="descclassname">+seg.</code><code class="descname">threefold_cell</code><span class="sig-paren">(</span><em>Struct</em><span class="sig-paren">)</span><a class="headerlink" href="#+seg.threefold_cell" title="Permalink to this definition">¶</a></dt>
+<dd><p>THREEFOLD_CELL Will append a boolean flag onto each cell that tells us if
+it contains only threefold vertices or not.</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="+seg.update4FoldVertex">
+<code class="descclassname">+seg.</code><code class="descname">update4FoldVertex</code><span class="sig-paren">(</span><em>Struct</em>, <em>PN</em><span class="sig-paren">)</span><a class="headerlink" href="#+seg.update4FoldVertex" title="Permalink to this definition">¶</a></dt>
+<dd><p>UPDATE 4FOLD VERTEX</p>
+</dd></dl>
+
+</div>
+
+
+           </div>
+           
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="smooth.html" class="btn btn-neutral float-right" title="smooth" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="measure.html" class="btn btn-neutral" title="measure" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2018, Nicholas Noll.
+
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/rtfd/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  
+
+    <script type="text/javascript">
+        var DOCUMENTATION_OPTIONS = {
+            URL_ROOT:'./',
+            VERSION:'v1.0',
+            LANGUAGE:'None',
+            COLLAPSE_INDEX:false,
+            FILE_SUFFIX:'.html',
+            HAS_SOURCE:  true,
+            SOURCELINK_SUFFIX: '.txt'
+        };
+    </script>
+      <script type="text/javascript" src="_static/jquery.js"></script>
+      <script type="text/javascript" src="_static/underscore.js"></script>
+      <script type="text/javascript" src="_static/doctools.js"></script>
+      <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+
+  
+
+  <script type="text/javascript" src="_static/js/theme.js"></script>
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

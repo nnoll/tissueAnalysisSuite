@@ -1,0 +1,367 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>generate &mdash; tissueAnalysisSuite v1.0 documentation</title>
+  
+
+  
+  
+  
+  
+
+  
+
+  
+  
+    
+
+  
+
+  <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="interpolate" href="interpolate.html" />
+    <link rel="prev" title="load" href="load.html" /> 
+
+  
+  <script src="_static/js/modernizr.min.js"></script>
+
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search">
+          
+
+          
+            <a href="index.html" class="icon icon-home"> tissueAnalysisSuite
+          
+
+          
+          </a>
+
+          
+            
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <p class="caption"><span class="caption-text">Namespaces:</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="track.html">track</a></li>
+<li class="toctree-l1"><a class="reference internal" href="fitDual.html">fitDual</a></li>
+<li class="toctree-l1"><a class="reference internal" href="continuum.html">continuum</a></li>
+<li class="toctree-l1"><a class="reference internal" href="load.html">load</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">generate</a></li>
+<li class="toctree-l1"><a class="reference internal" href="interpolate.html">interpolate</a></li>
+<li class="toctree-l1"><a class="reference internal" href="isogonal.html">isogonal</a></li>
+<li class="toctree-l1"><a class="reference internal" href="measure.html">measure</a></li>
+<li class="toctree-l1"><a class="reference internal" href="seg.html">seg</a></li>
+<li class="toctree-l1"><a class="reference internal" href="smooth.html">smooth</a></li>
+<li class="toctree-l1"><a class="reference internal" href="pressure.html">pressure</a></li>
+<li class="toctree-l1"><a class="reference internal" href="save.html">save</a></li>
+<li class="toctree-l1"><a class="reference internal" href="MI.html">MI</a></li>
+<li class="toctree-l1"><a class="reference internal" href="embedSpace.html">embedSpace</a></li>
+<li class="toctree-l1"><a class="reference internal" href="plot.html">plot</a></li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="index.html">tissueAnalysisSuite</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="index.html">Docs</a> &raquo;</li>
+        
+      <li>generate</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+            <a href="_sources/generated.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="module-+generate">
+<span id="generate"></span><h1>generate<a class="headerlink" href="#module-+generate" title="Permalink to this headline">¶</a></h1>
+<dl class="function">
+<dt id="+generate.RandSampleSphere">
+<code class="descclassname">+generate.</code><code class="descname">RandSampleSphere</code><span class="sig-paren">(</span><em>N</em>, <em>spl</em><span class="sig-paren">)</span><a class="headerlink" href="#+generate.RandSampleSphere" title="Permalink to this definition">¶</a></dt>
+<dd><p>Generate a uniform or stratified sampling of a unit sphere.</p>
+<dl class="docutils">
+<dt>INPUT ARGUMENTS:</dt>
+<dd><ul class="first last simple">
+<li>N   : desired number of point samples. N=200 is default.</li>
+<li><dl class="first docutils">
+<dt>spl <span class="classifier-delimiter">:</span> <span class="classifier">can be ‘uniform’ or ‘stratified’. The former setting is the</span></dt>
+<dd>default.</dd>
+</dl>
+</li>
+</ul>
+</dd>
+<dt>OUTPUT:</dt>
+<dd><ul class="first last simple">
+<li>X  : N-by-3 array of sample point coordinates.</li>
+</ul>
+</dd>
+<dt>REFERENCE:</dt>
+<dd><ul class="first last simple">
+<li>Shao &amp; Badler, 1996, Spherical Sampling by Archimedes’ Theorem</li>
+</ul>
+</dd>
+</dl>
+<p>AUTHOR: Anton Semechko (<a class="reference external" href="mailto:a&#46;semechko&#37;&#52;&#48;gmail&#46;com">a<span>&#46;</span>semechko<span>&#64;</span>gmail<span>&#46;</span>com</a>)
+DATE: May.2013</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="+generate.bCells">
+<code class="descclassname">+generate.</code><code class="descname">bCells</code><span class="sig-paren">(</span><em>d0</em>, <em>i0</em><span class="sig-paren">)</span><a class="headerlink" href="#+generate.bCells" title="Permalink to this definition">¶</a></dt>
+<dd><p>B CELLS</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="+generate.bondMap">
+<code class="descclassname">+generate.</code><code class="descname">bondMap</code><span class="sig-paren">(</span><em>Struct</em><span class="sig-paren">)</span><a class="headerlink" href="#+generate.bondMap" title="Permalink to this definition">¶</a></dt>
+<dd><p>BONDMAP</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="+generate.embedGraph">
+<code class="descclassname">+generate.</code><code class="descname">embedGraph</code><span class="sig-paren">(</span><em>Struct</em>, <em>embed</em><span class="sig-paren">)</span><a class="headerlink" href="#+generate.embedGraph" title="Permalink to this definition">¶</a></dt>
+<dd><p>EMBED SUB GRAPH</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="+generate.embedSubGraph">
+<code class="descclassname">+generate.</code><code class="descname">embedSubGraph</code><span class="sig-paren">(</span><em>Struct</em>, <em>bulkVerts</em>, <em>extVerts</em>, <em>embed</em><span class="sig-paren">)</span><a class="headerlink" href="#+generate.embedSubGraph" title="Permalink to this definition">¶</a></dt>
+<dd><p>EMBED SUB GRAPH</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="+generate.energy">
+<code class="descclassname">+generate.</code><code class="descname">energy</code><span class="sig-paren">(</span><em>x</em>, <em>nCon</em>, <em>nB</em>, <em>D1</em>, <em>D2</em>, <em>D3</em>, <em>L</em><span class="sig-paren">)</span><a class="headerlink" href="#+generate.energy" title="Permalink to this definition">¶</a></dt>
+<dd><p>ENERGY</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="+generate.faces">
+<code class="descclassname">+generate.</code><code class="descname">faces</code><span class="sig-paren">(</span><em>r</em>, <em>d0</em>, <em>d1</em><span class="sig-paren">)</span><a class="headerlink" href="#+generate.faces" title="Permalink to this definition">¶</a></dt>
+<dd><p>COMPUTE TENSION DUAL</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="+generate.fakeData">
+<code class="descclassname">+generate.</code><code class="descname">fakeData</code><span class="sig-paren">(</span><em>D</em>, <em>dim</em><span class="sig-paren">)</span><a class="headerlink" href="#+generate.fakeData" title="Permalink to this definition">¶</a></dt>
+<dd><p>FAKE DATA</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="+generate.fakeStruct">
+<code class="descclassname">+generate.</code><code class="descname">fakeStruct</code><span class="sig-paren">(</span><em>N</em>, <em>alpha</em>, <em>beta</em>, <em>gamma</em><span class="sig-paren">)</span><a class="headerlink" href="#+generate.fakeStruct" title="Permalink to this definition">¶</a></dt>
+<dd><p>FAKE STRUCT</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="+generate.meshGrid">
+<code class="descclassname">+generate.</code><code class="descname">meshGrid</code><span class="sig-paren">(</span><em>N</em>, <em>alpha</em><span class="sig-paren">)</span><a class="headerlink" href="#+generate.meshGrid" title="Permalink to this definition">¶</a></dt>
+<dd><p>GENERATEMESHGRID 
+N should be odd for proper function.</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="+generate.primal">
+<code class="descclassname">+generate.</code><code class="descname">primal</code><span class="sig-paren">(</span><em>Mesh</em><span class="sig-paren">)</span><a class="headerlink" href="#+generate.primal" title="Permalink to this definition">¶</a></dt>
+<dd><p>GENERATE TRIANGULATION</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="+generate.primalBonds">
+<code class="descclassname">+generate.</code><code class="descname">primalBonds</code><span class="sig-paren">(</span><em>Tri</em><span class="sig-paren">)</span><a class="headerlink" href="#+generate.primalBonds" title="Permalink to this definition">¶</a></dt>
+<dd><p>GENERATE TRIANGULATION</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="+generate.segEnergy">
+<code class="descclassname">+generate.</code><code class="descname">segEnergy</code><span class="sig-paren">(</span><em>Q</em>, <em>d0</em>, <em>rB</em>, <em>mask</em><span class="sig-paren">)</span><a class="headerlink" href="#+generate.segEnergy" title="Permalink to this definition">¶</a></dt>
+<dd><p>FORCE BALANCE ENERGY</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="+generate.sphericalEmbryo">
+<code class="descclassname">+generate.</code><code class="descname">sphericalEmbryo</code><span class="sig-paren">(</span><em>N</em><span class="sig-paren">)</span><a class="headerlink" href="#+generate.sphericalEmbryo" title="Permalink to this definition">¶</a></dt>
+<dd><p>SPHERICALEMBRYO Summary of this function goes here
+Detailed explanation goes here</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="+generate.sphericalEnergy">
+<code class="descclassname">+generate.</code><code class="descname">sphericalEnergy</code><span class="sig-paren">(</span><em>X</em>, <em>Lbar</em><span class="sig-paren">)</span><a class="headerlink" href="#+generate.sphericalEnergy" title="Permalink to this definition">¶</a></dt>
+<dd><p>SPHERICALENERGY Summary of this function goes here
+Detailed explanation goes here</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="+generate.symmetrizedStress">
+<code class="descclassname">+generate.</code><code class="descname">symmetrizedStress</code><span class="sig-paren">(</span><em>sigma</em><span class="sig-paren">)</span><a class="headerlink" href="#+generate.symmetrizedStress" title="Permalink to this definition">¶</a></dt>
+<dd><p>SYMMETRIZED STRESS</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="+generate.triangularLattice">
+<code class="descclassname">+generate.</code><code class="descname">triangularLattice</code><span class="sig-paren">(</span><em>a</em>, <em>dim</em><span class="sig-paren">)</span><a class="headerlink" href="#+generate.triangularLattice" title="Permalink to this definition">¶</a></dt>
+<dd><p>GENERATETRIANGULARLATTICE</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="+generate.weightedVoronoi">
+<code class="descclassname">+generate.</code><code class="descname">weightedVoronoi</code><span class="sig-paren">(</span><em>r</em>, <em>d</em>, <em>dim</em><span class="sig-paren">)</span><a class="headerlink" href="#+generate.weightedVoronoi" title="Permalink to this definition">¶</a></dt>
+<dd><p>GENERATEWEIGHTEDVORONOI</p>
+</dd></dl>
+
+</div>
+
+
+           </div>
+           
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="interpolate.html" class="btn btn-neutral float-right" title="interpolate" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="load.html" class="btn btn-neutral" title="load" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2018, Nicholas Noll.
+
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/rtfd/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  
+
+    <script type="text/javascript">
+        var DOCUMENTATION_OPTIONS = {
+            URL_ROOT:'./',
+            VERSION:'v1.0',
+            LANGUAGE:'None',
+            COLLAPSE_INDEX:false,
+            FILE_SUFFIX:'.html',
+            HAS_SOURCE:  true,
+            SOURCELINK_SUFFIX: '.txt'
+        };
+    </script>
+      <script type="text/javascript" src="_static/jquery.js"></script>
+      <script type="text/javascript" src="_static/underscore.js"></script>
+      <script type="text/javascript" src="_static/doctools.js"></script>
+      <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+
+  
+
+  <script type="text/javascript" src="_static/js/theme.js"></script>
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

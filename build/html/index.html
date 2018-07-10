@@ -1,0 +1,269 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>Welcome to tissueAnalysisSuite’s documentation! &mdash; tissueAnalysisSuite v1.0 documentation</title>
+  
+
+  
+  
+  
+  
+
+  
+
+  
+  
+    
+
+  
+
+  <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="track" href="track.html" /> 
+
+  
+  <script src="_static/js/modernizr.min.js"></script>
+
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search">
+          
+
+          
+            <a href="#" class="icon icon-home"> tissueAnalysisSuite
+          
+
+          
+          </a>
+
+          
+            
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <p class="caption"><span class="caption-text">Namespaces:</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="track.html">track</a></li>
+<li class="toctree-l1"><a class="reference internal" href="fitDual.html">fitDual</a></li>
+<li class="toctree-l1"><a class="reference internal" href="continuum.html">continuum</a></li>
+<li class="toctree-l1"><a class="reference internal" href="load.html">load</a></li>
+<li class="toctree-l1"><a class="reference internal" href="generated.html">generate</a></li>
+<li class="toctree-l1"><a class="reference internal" href="interpolate.html">interpolate</a></li>
+<li class="toctree-l1"><a class="reference internal" href="isogonal.html">isogonal</a></li>
+<li class="toctree-l1"><a class="reference internal" href="measure.html">measure</a></li>
+<li class="toctree-l1"><a class="reference internal" href="seg.html">seg</a></li>
+<li class="toctree-l1"><a class="reference internal" href="smooth.html">smooth</a></li>
+<li class="toctree-l1"><a class="reference internal" href="pressure.html">pressure</a></li>
+<li class="toctree-l1"><a class="reference internal" href="save.html">save</a></li>
+<li class="toctree-l1"><a class="reference internal" href="MI.html">MI</a></li>
+<li class="toctree-l1"><a class="reference internal" href="embedSpace.html">embedSpace</a></li>
+<li class="toctree-l1"><a class="reference internal" href="plot.html">plot</a></li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="#">tissueAnalysisSuite</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="#">Docs</a> &raquo;</li>
+        
+      <li>Welcome to tissueAnalysisSuite’s documentation!</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+            <a href="_sources/index.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="welcome-to-tissueanalysissuite-s-documentation">
+<h1>Welcome to tissueAnalysisSuite’s documentation!<a class="headerlink" href="#welcome-to-tissueanalysissuite-s-documentation" title="Permalink to this headline">¶</a></h1>
+<p>This documentation is for the tissueAnalysisSuite: a collection of various MATLAB scripts that can be used in a wide array of quantiative analyses of time-lapse movies of biological systems undergoing macroscopic morphological changes. In particular, this code can in principle recieve any input dataset (either as TIFF or H5 output from Ilastik) and segment and track cells and subsequently measure biophysically relevant quantities such as tissue geometry, cell divisions, and morphological flow over time. Most importanlty, this code can infer cell mechanics at both the microscopic and macroscopic scale, as demonstrated in [], on arbitrary two-dimensional surfaces. It was primarily developed at University of California of Santa Barbara in the lab of Boris Shraiman, primarily during the PhD of Nicholas Noll (me). Anyone and everyone is welcome to use this code but I make no promises in regards to robustness with respect to different datasets. Individuals that want to use these tools but have difficulty running the code are strongly encouraged to contact me.</p>
+</div>
+<div class="section" id="getting-started">
+<h1>Getting started<a class="headerlink" href="#getting-started" title="Permalink to this headline">¶</a></h1>
+<p>As of the writing of this documentation, any and all code has been tested with MATLAB2016a and thus it may or may not work properly with past/future versions due to the everchanging syntax as decided by Mathworks. I wish this wasn’t so and in retrospect would have coded this in a different language but c’est la vie. On the upside, installation of this code should be as simple as pulling the repository from GitHub. Most of the relevant code is partioned among different namespaces to allow for users to create their own pipelines without fear of name collisions and overall confusion.</p>
+</div>
+<div class="section" id="code-api">
+<h1>Code API<a class="headerlink" href="#code-api" title="Permalink to this headline">¶</a></h1>
+<div class="toctree-wrapper compound">
+<p class="caption"><span class="caption-text">Namespaces:</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="track.html">track</a></li>
+<li class="toctree-l1"><a class="reference internal" href="fitDual.html">fitDual</a></li>
+<li class="toctree-l1"><a class="reference internal" href="continuum.html">continuum</a></li>
+<li class="toctree-l1"><a class="reference internal" href="load.html">load</a></li>
+<li class="toctree-l1"><a class="reference internal" href="generated.html">generate</a></li>
+<li class="toctree-l1"><a class="reference internal" href="interpolate.html">interpolate</a></li>
+<li class="toctree-l1"><a class="reference internal" href="isogonal.html">isogonal</a></li>
+<li class="toctree-l1"><a class="reference internal" href="measure.html">measure</a></li>
+<li class="toctree-l1"><a class="reference internal" href="seg.html">seg</a></li>
+<li class="toctree-l1"><a class="reference internal" href="smooth.html">smooth</a></li>
+<li class="toctree-l1"><a class="reference internal" href="pressure.html">pressure</a></li>
+<li class="toctree-l1"><a class="reference internal" href="save.html">save</a></li>
+<li class="toctree-l1"><a class="reference internal" href="MI.html">MI</a></li>
+<li class="toctree-l1"><a class="reference internal" href="embedSpace.html">embedSpace</a></li>
+<li class="toctree-l1"><a class="reference internal" href="plot.html">plot</a></li>
+</ul>
+</div>
+</div>
+<div class="section" id="indices-and-tables">
+<h1>Indices and tables<a class="headerlink" href="#indices-and-tables" title="Permalink to this headline">¶</a></h1>
+<ul class="simple">
+<li><a class="reference internal" href="genindex.html"><span class="std std-ref">Index</span></a></li>
+<li><a class="reference internal" href="py-modindex.html"><span class="std std-ref">Module Index</span></a></li>
+<li><a class="reference internal" href="search.html"><span class="std std-ref">Search Page</span></a></li>
+</ul>
+</div>
+<div class="section" id="support">
+<h1>Support<a class="headerlink" href="#support" title="Permalink to this headline">¶</a></h1>
+<p>Anyone who is interested but intimidated by the codebase is encouraged to contact me &#64; <a class="reference external" href="mailto:nicholas&#46;noll&#37;&#52;&#48;unibas&#46;ch">nicholas<span>&#46;</span>noll<span>&#64;</span>unibas<span>&#46;</span>ch</a>. I would love to see this tool be widely used and would help in any way I can.</p>
+</div>
+
+
+           </div>
+           
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="track.html" class="btn btn-neutral float-right" title="track" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2018, Nicholas Noll.
+
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/rtfd/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  
+
+    <script type="text/javascript">
+        var DOCUMENTATION_OPTIONS = {
+            URL_ROOT:'./',
+            VERSION:'v1.0',
+            LANGUAGE:'None',
+            COLLAPSE_INDEX:false,
+            FILE_SUFFIX:'.html',
+            HAS_SOURCE:  true,
+            SOURCELINK_SUFFIX: '.txt'
+        };
+    </script>
+      <script type="text/javascript" src="_static/jquery.js"></script>
+      <script type="text/javascript" src="_static/underscore.js"></script>
+      <script type="text/javascript" src="_static/doctools.js"></script>
+      <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+
+  
+
+  <script type="text/javascript" src="_static/js/theme.js"></script>
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

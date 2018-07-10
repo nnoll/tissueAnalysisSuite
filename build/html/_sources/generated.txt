@@ -1,0 +1,5 @@
+generate
+===============================================
+
+.. automodule:: +generate
+    :members:

@@ -1,0 +1,46 @@
+.. tissueAnalysisSuite documentation master file, created by
+   sphinx-quickstart on Sat Jul  7 20:17:12 2018.
+   You can adapt this file completely to your liking, but it should at least
+   contain the root `toctree` directive.
+
+Welcome to tissueAnalysisSuite's documentation!
+===============================================
+This documentation is for the tissueAnalysisSuite: a collection of various MATLAB scripts that can be used in a wide array of quantiative analyses of time-lapse movies of biological systems undergoing macroscopic morphological changes. In particular, this code can in principle recieve any input dataset (either as TIFF or H5 output from Ilastik) and segment and track cells and subsequently measure biophysically relevant quantities such as tissue geometry, cell divisions, and morphological flow over time. Most importanlty, this code can infer cell mechanics at both the microscopic and macroscopic scale, as demonstrated in [], on arbitrary two-dimensional surfaces. It was primarily developed at University of California of Santa Barbara in the lab of Boris Shraiman, primarily during the PhD of Nicholas Noll (me). Anyone and everyone is welcome to use this code but I make no promises in regards to robustness with respect to different datasets. Individuals that want to use these tools but have difficulty running the code are strongly encouraged to contact me. 
+
+Getting started
+===============================================
+As of the writing of this documentation, any and all code has been tested with MATLAB2016a and thus it may or may not work properly with past/future versions due to the everchanging syntax as decided by Mathworks. I wish this wasn't so and in retrospect would have coded this in a different language but c'est la vie. On the upside, installation of this code should be as simple as pulling the repository from GitHub. Most of the relevant code is partioned among different namespaces to allow for users to create their own pipelines without fear of name collisions and overall confusion.
+
+Code API
+===============================================
+
+.. toctree::
+   :maxdepth: 2
+   :caption: Namespaces:
+
+   track
+   fitDual
+   continuum
+   load
+   generated
+   interpolate
+   isogonal
+   measure
+   seg
+   smooth
+   pressure
+   save
+   MI
+   embedSpace
+   plot
+
+Indices and tables
+===============================================
+
+* :ref:`genindex`
+* :ref:`modindex`
+* :ref:`search`
+
+Support
+===============================================
+Anyone who is interested but intimidated by the codebase is encouraged to contact me @ nicholas.noll@unibas.ch. I would love to see this tool be widely used and would help in any way I can.
