@@ -3,35 +3,40 @@ function [ PN, ERes, r0 ] = returnDual( Struct, mode, extCell )
     % of the observed lattice in Struct using 1 of 3 different fitting
     % algorithms: tension net, small pressure nets, and curvy nets.
     %
-    % Inputs.
-    % 1. Struct. Data structure containing cell array.
-    % 2. mode. (1) TN (2) small pressure net (3) curvy nets.
-    % 3. Text. Boundary conditions.
+    % Parameters
+    % ----------
+    % Struct. Data structure containing cell array.
+    % mode : 
+    %   (1) Tension Net (ie straight line net) (3) curvy nets.
+    % extCell : set to 1
+    %   Boundary conditions.
+    %
+    % Returns
+    % -------
+    % PN : cell of classes
+    %   
 
     if (nargin == 2)
-        extCell = 0;
+        % By default, the external cell is labeled as cell 1
+        extCell = 1;
     end
     
     ERes = zeros(length(Struct),1);
     for t = 1:length(Struct)
-        t
+        disp('Fitting dual for time point', str(t), ' / ', str(length(Struct)))
         if (mode == 1)
            [ q, theta, tri, i0, i2, ERes(t) ] = fitDual.ATN.returnDual( Struct(t), extCell );
            p = ones(size(theta));
         elseif (mode == 2)
-           [ q, theta ] = fitDual.ATN.returnDual( Struct(t), extCell );
-           p = ones(size(theta));
-           Q = [q,theta,p];
-           [ q, theta, p, tri, i0, ERes(t) ] = fitDual.AFN.returnDual( Struct(t), extCell, Q ); 
-        elseif (mode == 3)
            tic
            [ q, theta, p, tri, i0, i2, ERes(t) ] = fitDual.AFN.returnDual( Struct(t), extCell ); 
            toc
         end
         
+        disp('   -> updating pressure net')
         PN{t} = pressure.net( q, theta, p, tri, i0, i2 );
         if (nargout == 3)
-            [ ~, ~, ~, ~, ~, r0{t} ] = fitDual.returnGraph( Struct(t), extCell );
+            [ ~, ~, ~, ~, ~, r0{t} ] = fitDual.returnGraph(Struct(t), extCell);
         end
 
     end

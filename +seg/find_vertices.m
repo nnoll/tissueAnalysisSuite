@@ -1,5 +1,12 @@
-function [ Vdat ] = find_vertices( L, threeFold )
-
+function [ Vdat ] = find_vertices( L, threeFold, very_far)
+    %
+    % L : 
+    % threeFold : 
+    % very_far : float
+    %   threshold maximum distance to consider a pair of cells to be
+    %   adjacent
+    % 
+    
     %Find position of all vertices
     if (nargin == 1 || threeFold == 0)
         CC = bwconncomp(seg.findBranchPoints( L==0 ), 8);
@@ -62,7 +69,7 @@ function [ Vdat ] = find_vertices( L, threeFold )
     %Compute vertex connections via overlap of neighboring cells.
     for ii = 1:N
         for jj = ii+1:N
-           if (D(ii,jj) <= 200000)
+           if (D(ii,jj) <= very_far^2)
                common_mems = ismembc(Vdat(ii).ncells,Vdat(jj).ncells);
                ncommon = sum(common_mems);
                if (ncommon >= 2)
