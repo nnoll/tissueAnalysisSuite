@@ -1,5 +1,16 @@
 function [ ] = stressTensor( Struct, L, smoothSize )
-
+    % stressTensor( Struct, L, smoothSize ): plot the stress Tensor
+    %
+    % Parameters
+    % ----------
+    % Struct : 
+    % L : 
+    % smoothSize : (float or int) smoothing window in pixels, I think
+    %
+    % Returns
+    % -------
+    % None
+    
     [ ~, ~, ~, ~, iCells ] = fitDual.ATN.computeDiffOperators( Struct, 1 );  
 
     Rc = zeros(length(iCells),2);

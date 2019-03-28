@@ -29,10 +29,13 @@ very_far = 150 ;
 
 %% Load in h5 from ilastik.
 mode = 0; % Toggle for illastik version control
-Folder = 'h5/';
+Folder = '/Users/npmitchell/Dropbox/Soft_Matter/UCSB/gut_morphogenesis/data/48Ygal4UasCAAXmCherry/201902041850_slowdevelop_bleached_obis2_diedeventually/h5/';
+imfn = '/Users/npmitchell/Dropbox/Soft_Matter/UCSB/gut_morphogenesis/data/48Ygal4UasCAAXmCherry/201902041850_slowdevelop_bleached_obis2_diedeventually/201902041850_slowdevelop_bleached_obis2_diedeventually_Cyl1_1_000011_c1_slice27.png'
 [ mem ] = load.ilastikh5( Folder, mode );
+raw = imread( imfn );
 
 %% Segment the membrane.
+% L is the label matrix
 L = seg.memWS(mem, 50, 0, 1, 3.5);
 % Set bond=0 and clear_border = 1
 [L, Struct] = seg.generate_structs(L, 0, 1, 0, very_far);
@@ -78,16 +81,20 @@ clear L
 disp('done with putting L data into Struct')
 
 %% Invert mechanics.
-mode = 3; % Pressure network inference
-extCell = 1; % This should honestly not be a parameter.
-[PN, ERes, r0] = fitDual.returnDual(Struct, mode, extCell);
+% 'atn': Tension network inference
+% 'ptn': Pressure(+Tension) network inference
+atn_ptn = 'ptn'; 
+extCell = 1; % The label for the external cell (surrounding void). 
+             % This should honestly not be a parameter.
+
+[PN, ERes, r0] = fitDual.returnDual(Struct, all(atn_ptn=='ptn') + 1, extCell);
 disp('done with inverse')
 
 %% Store mechanics in data structure
 for t = 1:size(PN)
     % uploadMechanics is a method in the pressure.net class
     % It stores a pressure for each cdat and tension for each bdat
-    [Struct(t), found_bonds] = PN{t}.uploadMechanics(Struct(t), ERes);
+    [Struct(t), found_bonds] = PN{t}.uploadMechanics(Struct(t));
     Struct(t).ERes = ERes(t);
     Struct(t).PN = PN(t);
 end
@@ -95,4 +102,37 @@ disp('Done storing mechanics')
 
 
 %% Save to disk
-saveas(outfn, [Struct, ERes, PN])
+outfn = split(Folder, 'h5/'); 
+outfn = [ outfn{1} 'tension_net'] ;
+save(outfn, 'Struct', 'ERes', 'PN')
+
+%% Compute stress Tensor from PN
+L = Struct.labelMat ;
+mode = 0 ;
+[ Struct ] = measure.stressTensor( Struct, L, mode ) ;
+
+%% Plot the segmentation
+L = Struct.labelMat ;
+alpha = 4. ;
+rgb = plot.segmentation( raw, L, alpha ) ;
+if length(rgb(1,1,1,:)) > 1
+    implay(rgb)
+else
+    imshow(rgb)
+end
+
+%% Plot the tension
+imshow(L)
+hold on;
+% below, mode : (0 or 1) If zero, plots Struct.Bdat.tension, but if nonzero plots Struct.Bdat.actual_tension
+if all(atn_ptn == 'atn')
+    plot.tension(Struct, 0)
+else
+    plot.curvedTension(Struct, 0)
+end
+
+%% Plot the stress tensor
+smoothSize = 10 ;
+for t = 1:size(PN)
+    plot.stressTensor( Struct(t), Struct(t).labelMat, smoothSize )
+end

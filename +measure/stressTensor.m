@@ -1,4 +1,30 @@
 function [ Struct ] = stressTensor( Struct, L, mode )
+%STRESSTENSOR - One line description of what the function or script performs (H1 line)
+%Optional file header info (to give more details about the function than in the H1 line)
+%Optional file header info (to give more details about the function than in the H1 line)
+%Optional file header info (to give more details about the function than in the H1 line)
+%
+% Syntax:  [Struct] = function_name(Struct, L, mode)
+%
+% Inputs:
+%    input1 - Description
+%    input2 - Description
+%    input3 - Description
+%
+% Outputs:
+%    output1 - Description
+%    output2 - Description
+%
+% Example: 
+%    Line 1 of example
+%    Line 2 of example
+%    Line 3 of example
+%
+% Other m-files required: none
+% Subfunctions: none
+% MAT-files required: none
+%
+% See also: OTHER_FUNCTION_NAME1,  OTHER_FUNCTION_NAME2
 
     if (nargin <= 2)
         mode = 1;
@@ -12,6 +38,7 @@ function [ Struct ] = stressTensor( Struct, L, mode )
         P = zeros(length(iCells),1);
         T = zeros(size(dC,1),1);
 
+        % Extract the pressure values from Struct into an array
         for c = 1:length(iCells)
             P(c) = Struct(t).Cdat(iCells(c)).pressure; 
         end

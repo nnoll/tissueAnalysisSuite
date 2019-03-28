@@ -1,5 +1,8 @@
 function [ L ] = mem( mem, lev )
-
+% mem(mem, lev): membrane extraction from 2d time sequence of images
+% mem : stack of membrane images
+% lev : (float or int) the threshold level for binarizing the image. 
+%
     L = zeros(size(mem));
     g = fspecial('gaussian',1);
     for t = 1:size(mem,3)

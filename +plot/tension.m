@@ -1,6 +1,12 @@
 function [ ] = tension( Struct, mode )
-%SKELETONIZE_VERTS Takes the network topology and triangulated position of
-%vertices to produce a skeletonized image.
+% TENSION  
+% 
+% Parameters
+% ----------
+% Struct : 
+% 
+% mode : (0 or 1) If zero, plots Struct.Bdat.tension, but if nonzero plots
+% Struct.Bdat.actual_tension
 
     if (nargin == 1)
         mode = 0;
@@ -33,6 +39,7 @@ function [ ] = tension( Struct, mode )
     T(badBonds) = [];
     dV(badBonds,:) = [];
     
+    % Get limits of tensions to plot
     Tmax = prctile(T,98);
     Tmin = prctile(T,2);
 
@@ -43,11 +50,11 @@ function [ ] = tension( Struct, mode )
     % Convert tension to color.
     cmap = hot(256);
     x = linspace(0,1,256);
-    
     Tcolor(:,1) = interp1(x,cmap(:,1),T);
     Tcolor(:,2) = interp1(x,cmap(:,2),T);
     Tcolor(:,3) = interp1(x,cmap(:,3),T);
     
+    % Plot the tensions
     hold on
     Vlist = Struct.Vdat;
     for b = 1:size(dV,1)
@@ -57,4 +64,3 @@ function [ ] = tension( Struct, mode )
     end
     
 end
-
