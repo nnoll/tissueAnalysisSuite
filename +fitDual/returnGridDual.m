@@ -1,6 +1,29 @@
 function [ PN, ERes, r0 ] = returnGridDual( Struct, xG, yG )
-%RETURNGRIDDUAL Summary of this function goes here
-%   Detailed explanation goes here
+%RETURNGRIDDUAL 
+%Optional file header info 
+%
+% Syntax:  [rgb] = trackedVerts(Struct, vertexPairs, cellPairs, skel, T)
+%
+% Inputs:
+%    Struct - Description
+%    vertexPairs - Description
+%    cellPairs - Description
+%    skel - 
+%    T - 
+%
+% Outputs:
+%    rgb - Description
+%
+% Example: 
+%    Line 1 of example
+%    Line 2 of example
+%    Line 3 of example
+%
+% Other m-files required: none
+% Subfunctions: none
+% MAT-files required: none
+%
+% See also: 
 
     Zc = 15;
     Z = zeros(length(yG),length(xG));

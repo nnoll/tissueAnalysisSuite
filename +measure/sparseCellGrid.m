@@ -1,5 +1,12 @@
 function [ xG, yG ] = sparseCellGrid( Struct, nX, nY, d )
-    % CELL GRID 
+% CELLGRID define patches of cells for local tangent planes
+% The output is linear vectors in (u,v). Assumes you have a rectangular
+% partition of the plane. 
+%
+% nX : # grids in x direction
+% nY : # gruds in y direction
+% d : # pixels to ignore at the edges of the chart (to ignore bad 
+%     segmentation at the boundary)
 
     if (isfield(Struct,'labelMat'))
         L = Struct.labelMat;

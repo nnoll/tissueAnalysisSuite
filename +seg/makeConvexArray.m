@@ -1,6 +1,13 @@
 function [ Struct ] = makeConvexArray( Struct, extCell )
-    % MAKE CONVEX ARRAY 
-    
+% MAKECONVEXARRAY Move vertices to prevent >180 degree angles
+% If concavity in the cells (ie there is an angle > 180) and trying to fit 
+% with only positive tensions (as is inferred), there will be a large 
+% localized error in the dual (sent to infinity) in order to fit a 
+% concave angle. Finds vertices > 180 deg, move vertex in direction
+% opposite of angle until < 180 deg. 
+% 
+%
+
     if (nargin == 1)
         extCell = 1;
     end

@@ -1,5 +1,11 @@
 function [Ltemp,Struct] = generate_structs(Ltrack, bond, clear_border, threefold, very_far)
+    % Skeletonize the label matrix to create vertices and connectivity
     % 
+    % 
+    % Parameters
+    % ----------
+    % Ltrack : int matrix (N x M x #timepoints or zslices)
+    %   segmentation of the image
     % bond : int (0 or 1)
     %   if 1, then find bonds. This is slow, so consider avoiding (set
     %   bond=0).
@@ -9,6 +15,9 @@ function [Ltemp,Struct] = generate_structs(Ltrack, bond, clear_border, threefold
     % threefold : bool or int (0/1)
     %   Inverse expects threefold vertices, so this moves 4-fold vertices
     %   apart.
+    % very_far : int or float
+    %   How far away for two vertices to definitely not be connected.
+    %   Larger than the size of a cell.
     %
     % Returns
     % -------
@@ -20,7 +29,7 @@ function [Ltemp,Struct] = generate_structs(Ltrack, bond, clear_border, threefold
     %   skeletonization of the tissue with fields
     %       vdat: 
     %           nverts : neighbor list for vertices
-    %           ncells : 
+    %           ncells : cells that define each vertex?
     %           vertxcoord : column of data in which vertex lives
     %           vertycoord : row of data in which each vertex lives
     %       cdat : cell data    
@@ -34,8 +43,8 @@ function [Ltemp,Struct] = generate_structs(Ltrack, bond, clear_border, threefold
     %           pix : linear indices of the pixels associated with that 
     %               bond
     %           chem : str 
-    % 
-    
+    %               which color channel the segment or intensity is in?
+    %
     Ltemp=Ltrack;
     
     if (nargin == 3)
@@ -69,7 +78,7 @@ function [Ltemp,Struct] = generate_structs(Ltrack, bond, clear_border, threefold
     end
 
     for ii=1:length(Ltemp(1,1,:))
-        ii
+        disp('Computing Struct for slice ', num2str(ii)])
         L = Ltemp(:,:,ii);
         Struct(ii) = seg.create_Cdat_Vdat_initial(L,bond,threefold, very_far);
         for v = 1:length(Struct(ii).Vdat)

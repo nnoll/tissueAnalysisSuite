@@ -27,18 +27,20 @@
 very_far = 150 ;
 
 
-%% Load in h5 from ilastik.
+%% Load in h5 file sequence in a master directory (from ilastik output).
 mode = 0; % Toggle for illastik version control
 Folder = '/Users/npmitchell/Dropbox/Soft_Matter/UCSB/gut_morphogenesis/data/48Ygal4UasCAAXmCherry/201902041850_slowdevelop_bleached_obis2_diedeventually/h5/';
-imfn = '/Users/npmitchell/Dropbox/Soft_Matter/UCSB/gut_morphogenesis/data/48Ygal4UasCAAXmCherry/201902041850_slowdevelop_bleached_obis2_diedeventually/201902041850_slowdevelop_bleached_obis2_diedeventually_Cyl1_1_000011_c1_slice27.png'
+imfn = '/Users/npmitchell/Dropbox/Soft_Matter/UCSB/gut_morphogenesis/data/48Ygal4UasCAAXmCherry/201902041850_slowdevelop_bleached_obis2_diedeventually/201902041850_slowdevelop_bleached_obis2_diedeventually_Cyl1_1_000011_c1_slice27.png' ;
 [ mem ] = load.ilastikh5( Folder, mode );
 raw = imread( imfn );
 
 %% Segment the membrane.
 % L is the label matrix
+disp('segmenting the images...')
 L = seg.memWS(mem, 50, 0, 1, 3.5);
 % Set bond=0 and clear_border = 1
 [L, Struct] = seg.generate_structs(L, 0, 1, 0, very_far);
+disp('done with initial segmentation')
 % Bad cells are bubble cells, which is a segmentation that forked and
 % reconnected.
 L = seg.removeBadCells(Struct, L);
@@ -53,7 +55,7 @@ disp('done with segmentation')
 % put a parameter in the cdat of Struct, a boolean of whether every vertex
 % is 3-fold.
 Struct = seg.threefold_cell(Struct);
-% generate the bdat structure in Struct
+% generate the Bdat structure in Struct
 Struct = seg.recordBonds(Struct, L);
 disp('generated the bond structure')
 % Segment the curvature of each bond

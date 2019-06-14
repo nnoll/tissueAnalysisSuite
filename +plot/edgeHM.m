@@ -4,9 +4,9 @@ function [ ] = edgeHM( Struct, T )
 
     Vlist = Struct.Vdat;
     Tmax = prctile(T,98);
-%     Tmax = max(T);
+    % Tmax = max(T);
     Tmin = prctile(T,2);
-%     Tmin = min(T);
+    % Tmin = min(T);
 
     T = (T-Tmin)/(Tmax-Tmin);
     T(T>1) = 1;

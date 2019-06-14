@@ -36,6 +36,7 @@ function [ L ] = memWS( mem, H, S, G, HM )
     % 
     L = zeros(size(mem));
     for t = 1:size(mem,3)
+        disp(['memWS: segmenting timepoint ', num2str(t)]) 
         mem(:,:,t) = imfilter(mem(:,:,t),g);
         cyto = 1 - mem(:,:,t);
         

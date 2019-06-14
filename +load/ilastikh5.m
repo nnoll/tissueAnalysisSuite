@@ -24,14 +24,14 @@ function [ mem ] = ilastikh5( Folder, channel)
     mem = [];
     for t = 3:length(Directory)
         fName = Directory(t).name;
-        if ~isempty(strfind(fName,'.h5'))
-            pred = hdf5read([Folder,fName],'exported_data');
+        if contains(fName,'.h5')
+            pred = h5read([Folder,fName], '/exported_data');
             % hdf5 changed format of saved data. Old version below.
             % if (nargin == 1 || mode == 0)
             % else
             % pred = hdf5read([Folder,fName],'volume/prediction');
             % end
-            mem = cat(3,mem,squeeze(pred(channel,:,:,:)));
+            mem = cat(3,mem,squeeze(pred(channel,:,:,:)));            
         end
     end
     

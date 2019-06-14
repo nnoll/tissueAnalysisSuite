@@ -1,9 +1,10 @@
 function [ ] = tension( Struct, mode )
-% TENSION  
+% TENSION  Plot the bonds colored by the tension in each bond
 % 
 % Parameters
 % ----------
-% Struct : 
+% Struct : struct
+%   The segmentation and mechanics for this experiment
 % 
 % mode : (0 or 1) If zero, plots Struct.Bdat.tension, but if nonzero plots
 % Struct.Bdat.actual_tension
