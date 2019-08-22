@@ -78,7 +78,7 @@ function [Ltemp,Struct] = generate_structs(Ltrack, bond, clear_border, threefold
     end
 
     for ii=1:length(Ltemp(1,1,:))
-        disp('Computing Struct for slice ', num2str(ii)])
+        disp(['Computing Struct for slice ', num2str(ii)])
         L = Ltemp(:,:,ii);
         Struct(ii) = seg.create_Cdat_Vdat_initial(L,bond,threefold, very_far);
         for v = 1:length(Struct(ii).Vdat)
