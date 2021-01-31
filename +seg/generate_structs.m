@@ -45,6 +45,7 @@ function [Ltemp,Struct] = generate_structs(Ltrack, bond, clear_border, threefold
     %           chem : str 
     %               which color channel the segment or intensity is in?
     %
+    % Written Nick Noll 2017-2019, Annotated NPMitchell 2019
     Ltemp=Ltrack;
     
     if (nargin == 3)
