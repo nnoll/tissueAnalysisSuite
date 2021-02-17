@@ -1,16 +1,18 @@
-function [ L ] = memWS( mem, H, S, G, HM )
+function [ L ] = memWS( mem, cellSize, strelRadius, gaussKernel, heightMiminum )
     % Use watershed method to construct the membrane segmentation.
     % 
     % Parameters
     % ----------
-    % mem : membranes
-    % H : float
+    % mem : membranes as images
+    % cellSize : int (default=200)
     %   kernel size for laplacian of Gaussian : set to scale of curvature
     %   picking out, around a cell size or higher, in units of area (pix^2)
-    % G : float
+    % strelRadius : int (default=1)
+    %   strel disk radius for dilation of segmented image
+    % gaussKernel : float (default=2)
     %   kernel size for Gaussian filter. Set to a couple pixels. 
     %   Has units of length (pix).
-    % HM : 
+    % heighMinimum : float (default=3.5)
     %   height of any local minima to merge, to reduce noise at rugged
     %   minima
     %
@@ -24,16 +26,16 @@ function [ L ] = memWS( mem, H, S, G, HM )
     % Written Nick Noll 2017-2019, Annotated NPMitchell 2019
     
     if (nargin == 1)
-        H = 200;
-        S = 1;
-        G = 2;
-        HM = 3.5;
+        cellSize = 200;
+        strelRadius = 1;
+        gaussKernel = 2;
+        heightMiminum = 3.5;
     end
     
     % Filter output: laplacian of Gaussian sharpens, then Gaussian smooths
-    h1 = fspecial('log', H);
-    seD1 = strel('disk', S);
-    g = fspecial('gaussian', G);
+    h1 = fspecial('log', cellSize);
+    seD1 = strel('disk', strelRadius);
+    g = fspecial('gaussian', gaussKernel);
     
     % Pack label image L with watershed results
     L = zeros(size(mem));
@@ -46,11 +48,11 @@ function [ L ] = memWS( mem, H, S, G, HM )
         % mem(:,:,t) = imclose(mem(:,:,t),strel('disk',3));
         
         lev = graythresh(cyto);
-        seed = im2bw(cyto, lev);
+        seed = im2bw(cyto, lev);  % consider swapping to imbinarize
         seed = imdilate(seed, seD1);
         seed = bwareaopen(seed, 25);
         
-        pre_water = imhmin(mem(:,:,t), HM);
+        pre_water = imhmin(mem(:,:,t), heightMiminum);
         pre_water = imimposemin(pre_water, seed);
         L(:,:,t) = watershed(pre_water);
     end
