@@ -12,11 +12,11 @@ function [ E, dE ] = energy( x, rV, tri, A, b )
     E = mean( sum((r-rV).^2,2) )/2;
     
     if (nargin == 5)
-        E = E + .5*mean((A*x(:)-b).^2);
+        E = E + .5 * mean((A*x(:)-b).^2);
     end
     
     if (nargout >= 2)
-%         dE = zeros(size(gradR,1),3*size(q,1));
+    % dE = zeros(size(gradR,1),3*size(q,1));
 
         NV = size(tri,1);
         NC = size(q,1);

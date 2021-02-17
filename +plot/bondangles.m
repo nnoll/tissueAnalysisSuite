@@ -1,17 +1,37 @@
-function [ ] = tension( Struct, mode )
-% TENSION  Plot the bonds colored by the tension in each bond
+function [ ] = bondlengths( Struct, varargin )
+% BONDLENGTHS  Plot the bonds colored by the length of each bond. This is
+% unfinished. Please finish writing it!
 % 
 % Parameters
 % ----------
 % Struct : struct
 %   The segmentation and mechanics for this experiment
 % 
-% mode : (0 or 1) If zero, plots Struct.Bdat.tension, but if nonzero plots
-% Struct.Bdat.actual_tension
+% mode : (0 or 1) unused currently
 
-    if (nargin == 1)
-        mode = 0;
+    if ~isempty(varargin)
+        % a variable input argument has been passed! Expect the bondlengths
+        % which have already been computed to be the variable.
+        bondlengths = varargin ;
     end
+    
+    % Collate bonds into linesegs
+    xyxy = zeros(length(bdat), 4) ;
+    vectors = zeros(length(bdat), 2) ;
+    bondxy = zeros(length(bdat), 2) ;
+    for bondi = 1:length(bdat)
+        ij = bdat(bondi).verts ;
+        x1 = vdat(ij(1)).vertxcoord ;
+        y1 = vdat(ij(1)).vertycoord ;
+        x2 = vdat(ij(2)).vertxcoord ;
+        y2 = vdat(ij(2)).vertycoord ;
+        xyxy(bondi, 1:2) = [x1, y1];
+        xyxy(bondi, 3:4) = [x2, y2];
+        vectors(bondi, :) = xyxy(bondi, 3:4) - xyxy(bondi, 1:2) ;
+        bondxy(bondi, :) = [0.5 * (x1 + x2), 0.5 * (y1 + y2)] ;
+    end
+    
+    break
     
     T = zeros(length(Struct.Bdat),1);
     dV = zeros(length(Struct.Bdat),2);

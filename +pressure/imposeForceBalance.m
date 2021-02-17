@@ -1,5 +1,29 @@
 function [ Struct ] = imposeForceBalance( Struct, dim, kappa )
-    % IMPOSE FORCE BALANCE 
+%IMPOSEFORCEBALANCE description
+%Optional file header info (to give more details about the function than in the H1 line)
+%
+% Syntax:  [Struct] = imposeForceBalance(Struct, dim, kappa)
+%
+% Inputs:
+%    Struct - Description
+%    vertexPairs - Description
+%    cellPairs - Description
+%    skel - 
+%    T - 
+%
+% Outputs:
+%    rgb - Description
+%
+% Example: 
+%    Line 1 of example
+%    Line 2 of example
+%    Line 3 of example
+%
+% Other m-files required: none
+% Subfunctions: none
+% MAT-files required: none
+%
+% See also: 
     
     for t = 1:length(Struct)
         t

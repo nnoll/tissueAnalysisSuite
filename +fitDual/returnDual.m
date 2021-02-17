@@ -7,7 +7,8 @@ function [ PN, ERes, r0 ] = returnDual( Struct, mode, extCell )
     % ----------
     % Struct. Data structure containing cell array.
     % mode : 
-    %   (1) Tension Net (ie straight line net) (3) curvy nets.
+    %   (1) Tension Net (ie straight line net) 
+    %   (2) curvy nets to compute forces with pressure differences.
     % extCell : set to 1
     %   Boundary conditions.
     %
@@ -23,7 +24,7 @@ function [ PN, ERes, r0 ] = returnDual( Struct, mode, extCell )
     
     ERes = zeros(length(Struct),1);
     for t = 1:length(Struct)
-        disp('Fitting dual for time point', str(t), ' / ', str(length(Struct)))
+        disp(['Fitting dual for time point ', num2str(t), ' / ', num2str(length(Struct))])
         if (mode == 1)
            [ q, theta, tri, i0, i2, ERes(t) ] = fitDual.ATN.returnDual( Struct(t), extCell );
            p = ones(size(theta));

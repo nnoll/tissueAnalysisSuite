@@ -1,5 +1,7 @@
 function [ ] = plotPrimal( this, color, r0 )
-    %PLOT PRIMAL 
+%PLOT PRIMAL plot the segmented cells based on supplied colors
+%
+% r0 : probably the positions of the dual vertices or the vertices??
     
     if (nargin == 3)
         r = this.computePrimalVerts(r0);

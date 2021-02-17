@@ -1,9 +1,14 @@
 function [ Struct, found_bond ] = uploadMechanics( this, Struct )
-    % uploadMechanics Store details of the mechanics of the pressure net
+    % uploadMechanics Store details of the mechanics of the pressure net in
+    % Struct
     %
     % Parameters
     % ----------
-    %
+    % this : PN{t} instance -- a pressure net at a given time 
+    %        Do not supply this argument, since it is implied from
+    %        uploadMechanics being a method of net
+    % Struct : the data structure
+    % 
     % Returns
     % -------
     % Struct : data structure
@@ -65,6 +70,7 @@ function [ Struct, found_bond ] = uploadMechanics( this, Struct )
     
     found_bond = find(found_bond);
     
+    % insert pressure into Struct.Cdat().pressure
     for c = 1:length(p)
         cellLabel = this.cellLabels(c);
         Struct.Cdat(cellLabel).pressure = p(c);

@@ -1,5 +1,30 @@
 function [ rgb ] = trackedVerts( Struct, vertexPairs, cellPairs, skel, T )
 %PLOT_TRACKED_VERTS Plots the tracer line between tracked verts
+%Optional file header info (to give more details about the function than in the H1 line)
+%
+% Syntax:  [rgb] = trackedVerts(Struct, vertexPairs, cellPairs, skel, T)
+%
+% Inputs:
+%    Struct - Description
+%    vertexPairs - Description
+%    cellPairs - Description
+%    skel - 
+%    T - 
+%
+% Outputs:
+%    rgb - Description
+%
+% Example: 
+%    Line 1 of example
+%    Line 2 of example
+%    Line 3 of example
+%
+% Other m-files required: none
+% Subfunctions: none
+% MAT-files required: none
+%
+% See also: TRACKEDCELLS,  TRACKEDBONDS
+
 
     rgb(:,:,1) = skel(:,:,T(1));
     rgb(:,:,3) = skel(:,:,T(2));

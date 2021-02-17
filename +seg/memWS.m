@@ -21,6 +21,8 @@ function [ L ] = memWS( mem, H, S, G, HM )
     %   The ordering of cells goes down then back up (and then back down) 
     %   as we move to the right.
     %
+    % Written Nick Noll 2017-2019, Annotated NPMitchell 2019
+    
     if (nargin == 1)
         H = 200;
         S = 1;
@@ -33,9 +35,10 @@ function [ L ] = memWS( mem, H, S, G, HM )
     seD1 = strel('disk', S);
     g = fspecial('gaussian', G);
     
-    % 
+    % Pack label image L with watershed results
     L = zeros(size(mem));
     for t = 1:size(mem,3)
+        disp(['memWS: segmenting timepoint ', num2str(t)]) 
         mem(:,:,t) = imfilter(mem(:,:,t),g);
         cyto = 1 - mem(:,:,t);
         
